@@ -98,7 +98,7 @@ const InquiryModal = ({ isOpen, onClose, course, onEnrollmentSuccess }) => {
       script.src = 'https://checkout.razorpay.com/v1/payment-button.js';
       if(course.price === 2950) {
         console.log('Setting payment button ID for price 2950');
-        script.setAttribute('data-payment_button_id', 'pl_RobPrOGlMoiuEY');
+        script.setAttribute('data-payment_button_id', 'pl_RmqJUmZqlh6XE5');
       }
       // else if(course.price === 4499) {
       //   console.log('Setting payment button ID for price 4499');
