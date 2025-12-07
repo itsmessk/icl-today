@@ -23,6 +23,7 @@ import Inquiries from './pages/Inquiries';
 import InquiryPage from './pages/InquiryPage';
 import Redirect from './components/Redirect';
 import ComingSoon from './pages/ComingSoon';
+import CourseSlugRedirect from './components/CourseSlugRedirect';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -65,6 +66,7 @@ function App() {
             <Route path="/" element={<ComingSoon />} />
             <Route path="/courses" element={<Courses />} />
             <Route path="/courses/:id" element={<CourseDetails user={user} />} />
+            <Route path="/course/:slug" element={<CourseSlugRedirect user={user} />} />
             <Route path="/login" element={<Login handleLogin={handleLogin} user={user} />} />
             <Route path="/register" element={<Register handleLogin={handleLogin} user={user} />} />
 

@@ -96,14 +96,14 @@ const InquiryModal = ({ isOpen, onClose, course, onEnrollmentSuccess }) => {
       console.log(`Course: `, course);
 
       script.src = 'https://checkout.razorpay.com/v1/payment-button.js';
-      if(course.price === 1999) {
-        console.log('Setting payment button ID for price 1999');
-        script.setAttribute('data-payment_button_id', 'pl_QM0XW5mBpfdpqZ');
+      if(course.price === 2950) {
+        console.log('Setting payment button ID for price 2950');
+        script.setAttribute('data-payment_button_id', 'pl_RmqJUmZqlh6XE5');
       }
-      else if(course.price === 4499) {
-        console.log('Setting payment button ID for price 4499');
-        script.setAttribute('data-payment_button_id', 'pl_QWJ2Ir5MdgiDc8');
-      }
+      // else if(course.price === 4499) {
+      //   console.log('Setting payment button ID for price 4499');
+      //   script.setAttribute('data-payment_button_id', 'pl_QWJ2Ir5MdgiDc8');
+      // }
       else{
         console.log('Setting payment button ID for OTHER price');
         script.setAttribute('data-payment_button_id', 'pl_QYKoogXOZceEX5');
@@ -272,29 +272,35 @@ const InquiryModal = ({ isOpen, onClose, course, onEnrollmentSuccess }) => {
 
             <div className="form-group">
               <label htmlFor="degree">Degree</label>
-              <input
-                type="text"
+              <select
                 id="degree"
                 name="degree"
                 value={formData.degree}
                 onChange={handleChange}
-                placeholder="Enter your degree"
                 className={errors.degree ? 'error' : ''}
-              />
+              >
+                <option value="">Select your degree</option>
+                <option value="B.E">B.E</option>
+                <option value="B.Tech">B.Tech</option>
+              </select>
               {errors.degree && <span className="error-message">{errors.degree}</span>}
             </div>
 
             <div className="form-group">
               <label htmlFor="year">Year of Study</label>
-              <input
-                type="text"
+              <select
                 id="year"
                 name="year"
                 value={formData.year}
                 onChange={handleChange}
-                placeholder="Enter your year of study"
                 className={errors.year ? 'error' : ''}
-              />
+              >
+                <option value="">Select your year</option>
+                <option value="1st Year">1st Year</option>
+                <option value="2nd Year">2nd Year</option>
+                <option value="3rd Year">3rd Year</option>
+                <option value="4th Year">4th Year</option>
+              </select>
               {errors.year && <span className="error-message">{errors.year}</span>}
             </div>
 

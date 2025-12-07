@@ -107,7 +107,7 @@ const Login = ({ handleLogin, user }) => {
       const userData = await loginUser(demoCredentials);
       handleLogin(userData);
       toast.success('Demo login successful!');
-      navigate('/inquiries');
+      navigate('/courses');
     } catch (error) {
       console.error('Demo login failed:', error);
       toast.error('Demo login failed. Please try normal login.');
@@ -164,7 +164,7 @@ const Login = ({ handleLogin, user }) => {
               {isLoading ? 'Logging in...' : 'Login'}
             </button>
             
-            {/* Only show demo login if we need to for testing */}
+            {/* Only show demo login if we need to for testing
             {process.env.NODE_ENV === 'development' && (
               <button 
                 onClick={handleDemoLogin}
@@ -174,7 +174,7 @@ const Login = ({ handleLogin, user }) => {
               >
                 Use Demo Account
               </button>
-            )}
+            )} */}
           </form>
           
           <div className="auth-footer">

@@ -35,7 +35,7 @@ const CourseCard = ({ course }) => {
             <span>{course.rating || 0}</span>
             {course.enrollmentCount && (
               <span className="enrollment-count">
-                ({course.enrollmentCount} students)
+                ({course.enrollmentCount}+ students)
               </span>
             )}
           </div>

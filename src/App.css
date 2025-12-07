@@ -139,19 +139,19 @@ body {
   border-radius: 4px;
   font-size: 1rem;
   transition: var(--transition);
-  color: var(--text-dark);
-  background-color: #fff;
+  color: #ecf0f1;
+  background-color: #2c3e50;
 }
 
 .form-control:focus {
   outline: none;
   border-color: var(--primary-color);
   box-shadow: 0 0 0 3px rgba(0, 105, 180, 0.2);
-  color: var(--text-dark);
+  color: #ecf0f1;
 }
 
 .form-control::placeholder {
-  color: rgba(108, 117, 125, 0.7);
+  color: #95a5a6;
 }
 
 .error-message {
@@ -926,11 +926,12 @@ body {
   .hamburger {
     display: flex;
     z-index: 101;
+    position: relative;
   }
   
   .nav-links {
     position: fixed;
-    top: 78px;
+    top: 60px;
     left: 0;
     width: 100%;
     background: white;
@@ -1104,7 +1105,7 @@ body {
 }
 
 .course-details-page {
-  padding: 2rem 0;
+  
   background-color: var(--light-bg);
 }
 

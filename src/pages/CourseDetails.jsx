@@ -61,192 +61,233 @@ const CourseDetails = ({ user }) => {
   
   return (
     <div className="course-details-page">
-      <div className="container">
-        {/* Mobile Course Header - Only visible on small screens */}
-        <div className="mobile-course-header">
-          <div className="course-sidebar-price">₹{course.price}</div>
-          {isEnrolled ? (
-            <button className="btn btn-success enroll-button" disabled>
-              Already Enrolled
-            </button>
-          ) : (
-            <button className="btn btn-primary enroll-button" onClick={handleEnrollment}>
-              Enroll Now
-            </button>
-          )}
-        </div>
-        
-        {/* Course Details */}
-        <div className="course-details">
-          <div className="course-details-main">
-            <h1 className="course-details-title">🚀 {course.title}</h1>
-            <h3 className="course-details-meta">{course.subtitle}</h3>
-            
-            <div className="course-details-meta">
-              <div>
-                <i className="fas fa-user"></i> Instructor: {course.instructor}
-              </div>
-              <div>
-                <i className="fas fa-signal"></i> Level: {course.level}
-              </div>
-              <div>
-                <i className="fas fa-clock"></i> Duration: {course.duration}
-              </div>
-              <div>
-                <i className="fas fa-users"></i> Students: {course.enrollmentCount || 0}
-              </div>
-            </div>
-            
-            <img 
-              src={course.image} 
-              alt={course.title}
-              className="course-details-image"
-            />
-            
-            {/* Course Tabs */}
-            <div className="course-tabs">
-              <div className="tabs-header">
-                <button 
-                  className={`tab-btn ${activeTab === 'overview' ? 'active' : ''}`}
-                  onClick={() => setActiveTab('overview')}
-                >
-                  Overview
-                </button>
-                <button 
-                  className={`tab-btn ${activeTab === 'curriculum' ? 'active' : ''}`}
-                  onClick={() => setActiveTab('curriculum')}
-                >
-                  Curriculum
-                </button>
-                <button 
-                  className={`tab-btn ${activeTab === 'instructor' ? 'active' : ''}`}
-                  onClick={() => setActiveTab('instructor')}
-                >
-                  Instructor
-                </button>
-              </div>
-              
-              <div className="tabs-content">
-                {activeTab === 'overview' && (
-                  <div className="tab-pane">
-                    <h3>Course Description</h3>
-                    <p className="course-details-description" dangerouslySetInnerHTML={{ __html: course.description }}></p>
-                    
-                    <h3>🧠 Core Skills You'll Learn</h3>
-                    <ul className="topics-list">
-                      {course.topics.map((topic, index) => (
-                        <li key={index}>
-                          <i className="fas fa-square-check"></i> {topic}
-                        </li>
-                      ))}
-                    </ul>
-                    
-                    {
-                      (course.benefits && course.benefits.length > 0) && (
-                        <>
-                          <h3>🎓 Benefits</h3>
-                          <ul className="topics-list">
-                            {course.benefits.map((benefit, index) => (
-                              <li key={index}>
-                                <i className="fa fa-star fa-filled"></i> {benefit}
-                              </li>
-                            ))}
-                          </ul>
-                        </>
-                      )
-                    }
-                    
+      {/* Hero Section with Course Banner */}
+      <div className="course-hero">
+        <div className="course-hero-overlay">
+          <div className="container">
+            <div className="course-hero-content">
+              <div className="course-hero-left">
+                <div className="course-badge">
+                  <i className="fas fa-graduation-cap"></i> {course.category || 'Professional Course'}
+                </div>
+                <h1 className="course-hero-title">{course.title}</h1>
+                <p className="course-hero-subtitle">{course.subtitle}</p>
+                
+                <div className="course-hero-meta">
+                  <div className="meta-item">
+                    <i className="fas fa-star"></i>
+                    <span>4.8 (120 reviews)</span>
+                  </div>
+                  <div className="meta-item">
+                    <i className="fas fa-users"></i>
+                    <span>{course.enrollmentCount || 0}+ students</span>
+                  </div>
+                  <div className="meta-item">
+                    <i className="fas fa-signal"></i>
+                    <span>{course.level}</span>
+                  </div>
+                  <div className="meta-item">
+                    <i className="fas fa-clock"></i>
+                    <span>{course.duration}</span>
+                  </div>
+                </div>
 
+                <div className="course-instructor-mini">
+                  <img src="https://i.graphicmama.com/uploads/2017/12/5a2658fe73cef-clark-executive.png" alt={course.instructor} />
+                  <div>
+                    <span className="instructor-label">Created by</span>
+                    <span className="instructor-name">{course.instructor}</span>
                   </div>
-                )}
-                
-                {activeTab === 'curriculum' && (
-                  <div className="tab-pane">
-                    <h3>Course Curriculum</h3>
-                    {course.curriculum && course.curriculum.length > 0 ? (
-                      course.curriculum.map((section, sectionIndex) => (
-                        <div key={sectionIndex} className="curriculum-section">
-                          <h4 className="section-title">
-                            {section.title}
-                          </h4>
-                          <ul className="lessons-list">
-                            {section.lessons.map((lesson, lessonIndex) => (
-                              <li key={lessonIndex} className="lesson-item">
-                                <div className="lesson-info">
-                                  <span className="lesson-title">
-                                    <i className="fas fa-play-circle"></i> {lesson.title}
-                                  </span>
-                                  <span className="lesson-duration">{lesson.duration}</span>
-                                </div>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))
-                    ) : (
-                      <p>You will be notified with complete details regarding the start of your program.</p>
-                    )}
-                  </div>
-                )}
-                
-                {activeTab === 'instructor' && (
-                  <div className="tab-pane">
-                    <h3>About the Instructor</h3>
-                    <div className="instructor-profile">
-                      <div className="instructor-image">
-                        <img src={`https://i.graphicmama.com/uploads/2017/12/5a2658fe73cef-clark-executive.png`} alt={course.instructor} />
+                </div>
+              </div>
+
+              <div className="course-hero-right">
+                <div className="course-card-sticky">
+                  <div className="course-preview-card">
+                    <img src={course.image} alt={course.title} className="preview-image" />
+                    <div className="preview-content">
+                      <div className="price-section">
+                        <span className="price-current">₹{course.price}</span>
+                        {course.originalPrice && (
+                          <span className="price-original">₹{course.originalPrice}</span>
+                        )}
                       </div>
-                      <div className="instructor-info">
-                        <h4>{course.instructor}</h4>
-                        <p>
-                          Experienced instructor with expertise in {course.topics.slice(0, 2).join(', ')}, 
-                          and other related technologies. Passionate about teaching and helping 
-                          students master complex concepts through practical examples.
-                        </p>
+                      
+                      {isEnrolled ? (
+                        <button className="btn-enrolled" disabled>
+                          <i className="fas fa-check-circle"></i> Already Enrolled
+                        </button>
+                      ) : (
+                        <button className="btn-enroll" onClick={handleEnrollment}>
+                          <i className="fas fa-shopping-cart"></i> Enroll Now
+                        </button>
+                      )}
+
+                      <div className="course-includes">
+                        <h4>This course includes:</h4>
+                        <ul>
+                          <li><i className="fas fa-video"></i> Live & Recorded Sessions</li>
+                          <li><i className="fas fa-infinity"></i> Full lifetime access</li>
+                          <li><i className="fas fa-mobile-alt"></i> Mobile & Desktop access</li>
+                          <li><i className="fas fa-certificate"></i> Certificate of completion</li>
+                          <li><i className="fas fa-headset"></i> Instructor support</li>
+                        </ul>
                       </div>
                     </div>
                   </div>
-                )}
+                </div>
               </div>
             </div>
           </div>
-          
-          {/* Course Sidebar */}
-          <div className="course-sidebar">
-            <div className="course-sidebar-price">₹{course.price}</div>
-            
-            <div className="course-features">
-              <div className="course-feature">
-                <i className="fas fa-play-circle"></i>
-                <span>Full lifetime access</span>
-              </div>
-              <div className="course-feature">
-                <i className="fas fa-mobile-alt"></i>
-                <span>Access on mobile and desktop</span>
-              </div>
-              <div className="course-feature">
-                <i className="fas fa-certificate"></i>
-                <span>Certificate of completion</span>
-              </div>
-              <div className="course-feature">
-                <i className="fas fa-comments"></i>
-                <span>Instructor support</span>
+        </div>
+      </div>
+
+      <div className="container">
+        <div className="course-content-wrapper">
+          {/* Main Content */}
+          <div className="course-main-content">
+            {/* What You'll Learn Section */}
+            <div className="content-section learning-outcomes">
+              <h2 className="section-title">
+                <i className="fas fa-lightbulb"></i> What You'll Learn
+              </h2>
+              <div className="outcomes-grid">
+                {course.topics.slice(0, 8).map((topic, index) => (
+                  <div key={index} className="outcome-item">
+                    <i className="fas fa-check-circle"></i>
+                    <span>{topic}</span>
+                  </div>
+                ))}
               </div>
             </div>
-            
-            {isEnrolled ? (
-              <button className="btn btn-success enroll-button" disabled>
-                Already Enrolled
-              </button>
-            ) : (
-              <button className="btn btn-primary enroll-button" onClick={handleEnrollment}>
-                Enroll Now
-              </button>
-            )}
-            
-            <div className="money-back">
-              <i className="fas fa-shield-alt"></i>
-              <span>Live sessions with on-demand WhatsApp guidance</span>
+
+            {/* Tabs Section */}
+            <div className="content-section">
+              <div className="course-tabs">
+                <div className="tabs-header">
+                  <button 
+                    className={`tab-btn ${activeTab === 'overview' ? 'active' : ''}`}
+                    onClick={() => setActiveTab('overview')}
+                  >
+                    <i className="fas fa-info-circle"></i> Overview
+                  </button>
+                  <button 
+                    className={`tab-btn ${activeTab === 'curriculum' ? 'active' : ''}`}
+                    onClick={() => setActiveTab('curriculum')}
+                  >
+                    <i className="fas fa-list-ul"></i> Curriculum
+                  </button>
+                  <button 
+                    className={`tab-btn ${activeTab === 'instructor' ? 'active' : ''}`}
+                    onClick={() => setActiveTab('instructor')}
+                  >
+                    <i className="fas fa-user-tie"></i> Instructor
+                  </button>
+                </div>
+                
+                <div className="tabs-content">
+                  {activeTab === 'overview' && (
+                    <div className="tab-pane fade-in">
+                      <h3>Course Description</h3>
+                      <div className="course-description" dangerouslySetInnerHTML={{ __html: course.description }}></div>
+                      
+                      {course.benefits && course.benefits.length > 0 && (
+                        <>
+                          <h3 className="benefits-title">
+                            <i className="fas fa-trophy"></i> Course Benefits
+                          </h3>
+                          <div className="benefits-grid">
+                            {course.benefits.map((benefit, index) => (
+                              <div key={index} className="benefit-card">
+                                <i className="fas fa-star"></i>
+                                <p>{benefit}</p>
+                              </div>
+                            ))}
+                          </div>
+                        </>
+                      )}
+                    </div>
+                  )}
+                  
+                  {activeTab === 'curriculum' && (
+                    <div className="tab-pane fade-in">
+                      <h3>Course Curriculum</h3>
+                      {course.curriculum && course.curriculum.length > 0 ? (
+                        <div className="curriculum-container">
+                          {course.curriculum.map((section, sectionIndex) => (
+                            <div key={sectionIndex} className="curriculum-section">
+                              <div className="section-header">
+                                <h4>
+                                  <i className="fas fa-folder-open"></i>
+                                  Section {sectionIndex + 1}: {section.title}
+                                </h4>
+                                <span className="section-count">{section.lessons.length} lessons</span>
+                              </div>
+                              <ul className="lessons-list">
+                                {section.lessons.map((lesson, lessonIndex) => (
+                                  <li key={lessonIndex} className="lesson-item">
+                                    <div className="lesson-icon">
+                                      <i className="fas fa-play-circle"></i>
+                                    </div>
+                                    <div className="lesson-details">
+                                      <span className="lesson-title">{lesson.title}</span>
+                                      <span className="lesson-duration">
+                                        <i className="far fa-clock"></i> {lesson.duration}
+                                      </span>
+                                    </div>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          ))}
+                        </div>
+                      ) : (
+                        <div className="curriculum-placeholder">
+                          <i className="fas fa-info-circle"></i>
+                          <p>You will be notified with complete details regarding the start of your program.</p>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                  
+                  {activeTab === 'instructor' && (
+                    <div className="tab-pane fade-in">
+                      <div className="instructor-card">
+                        <div className="instructor-header">
+                          <img src="https://i.graphicmama.com/uploads/2017/12/5a2658fe73cef-clark-executive.png" alt={course.instructor} />
+                          <div className="instructor-info">
+                            <h3>{course.instructor}</h3>
+                            <p className="instructor-title">Senior Instructor & Industry Expert</p>
+                            <div className="instructor-stats">
+                              <div className="stat">
+                                <i className="fas fa-star"></i>
+                                <span>4.8 Rating</span>
+                              </div>
+                              <div className="stat">
+                                <i className="fas fa-users"></i>
+                                <span>2,500+ Students</span>
+                              </div>
+                              <div className="stat">
+                                <i className="fas fa-play-circle"></i>
+                                <span>15 Courses</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="instructor-bio">
+                          <h4>About the Instructor</h4>
+                          <p>
+                            Experienced instructor with expertise in {course.topics.slice(0, 3).join(', ')}, 
+                            and other related technologies. With over 10 years in the industry, brings 
+                            real-world experience to help students master complex concepts through 
+                            practical examples and hands-on projects.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
             </div>
           </div>
         </div>

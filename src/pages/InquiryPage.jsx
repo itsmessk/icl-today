@@ -91,7 +91,7 @@ const InquiryPage = () => {
       const form = document.createElement('form');
       const script = document.createElement('script');
       script.src = 'https://checkout.razorpay.com/v1/payment-button.js';
-      script.setAttribute('data-payment_button_id', 'pl_QOtssGXvlIvBls');
+      script.setAttribute('data-payment_button_id', 'pl_RobPrOGlMoiuEY');
       script.async = true;
       
       form.appendChild(script);

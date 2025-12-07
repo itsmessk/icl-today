@@ -87,14 +87,22 @@ const PaymentSuccess = () => {
                 <i className="fas fa-check-circle"></i>
               </div>
               <h2>Payment Successful!</h2>
-              <p>Thank you {name} for enrolling. You can now access your course.</p>
+              <p>Thank you, {name}! Your enrollment has been confirmed.</p>
+              <div className="payment-info-box">
+                <h3>What's Next?</h3>
+                <ul>
+                  <li>📧 Check your email for course access details</li>
+                  <li>📚 Your onboarding information will be shared shortly</li>
+                  <li>💬 Our team will contact you within 48 hours</li>
+                </ul>
+              </div>
               <div className="payment-actions">
                 <button className="btn btn-primary" onClick={handleContinue}>
-                Thank you for your trust and payment. Your internship onboarding details will be shared with you soon.
+                  Browse More Courses
                 </button>
-                <div>
-                  <strong>Connect with us:</strong> <a href="mailto:support@infoziant.com">support@infoziant.com</a>
-                </div>
+              </div>
+              <div className="support-info">
+                <p>Need help? Contact us at <a href="mailto:support@infoziant.com">support@infoziant.com</a></p>
               </div>
             </div>
           ) : (
