@@ -96,8 +96,8 @@ const InquiryModal = ({ isOpen, onClose, course, onEnrollmentSuccess }) => {
       console.log(`Course: `, course);
 
       script.src = 'https://checkout.razorpay.com/v1/payment-button.js';
-      if(course.price === 2950) {
-        console.log('Setting payment button ID for price 2950');
+      if(course.price === 2500) {
+        console.log('Setting payment button ID for price 2500');
         script.setAttribute('data-payment_button_id', 'pl_RmqJUmZqlh6XE5');
       }
       // else if(course.price === 4499) {
@@ -106,7 +106,7 @@ const InquiryModal = ({ isOpen, onClose, course, onEnrollmentSuccess }) => {
       // }
       else{
         console.log('Setting payment button ID for OTHER price');
-        script.setAttribute('data-payment_button_id', 'pl_QYKoogXOZceEX5');
+        script.setAttribute('data-payment_button_id', 'pl_RmqJUmZqlh6XE5');
       }
 
       //script.setAttribute('data-payment_button_id', course.price === 1499 ? 'pl_QM0XW5mBpfdpqZ' : 'pl_QWJ2Ir5MdgiDc8');

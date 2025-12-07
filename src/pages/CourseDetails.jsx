@@ -107,7 +107,7 @@ const CourseDetails = ({ user }) => {
                     <img src={course.image} alt={course.title} className="preview-image" />
                     <div className="preview-content">
                       <div className="price-section">
-                        <span className="price-current">₹{course.price}</span>
+                        <span className="price-current">₹{course.price} + GST</span>
                         {course.originalPrice && (
                           <span className="price-original">₹{course.originalPrice}</span>
                         )}

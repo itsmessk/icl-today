@@ -6,7 +6,7 @@ const ComingSoon = () => {
     <div className="coming-soon-container">
       <div className="coming-soon-content">
         <div className="coming-soon-logo">
-          <h1 className="company-name">ICL Today</h1>
+          <h1 className="company-name">ICL</h1>
           <p className="company-full-name">Infoziant Centre of Learning</p>
         </div>
         

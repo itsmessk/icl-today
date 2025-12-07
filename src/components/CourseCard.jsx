@@ -39,7 +39,7 @@ const CourseCard = ({ course }) => {
               </span>
             )}
           </div>
-          <div className="course-price">{formatPrice(course.price)}</div>
+          <div className="course-price">{formatPrice(course.price)} + GST</div>
         </div>
         <div className="course-footer">
           <span className="course-level">

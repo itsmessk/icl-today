@@ -25,7 +25,7 @@ const Navbar = ({ user, handleLogout }) => {
         <div className="navbar-content">
           <div className="logo">
             <Link to="/">
-              <h2 style={{ margin: 0, color: '#667eea', fontWeight: 800 }}>ICL Today</h2>
+              <h2 style={{ margin: 0, color: '#667eea', fontWeight: 800 }}>ICL</h2>
               <p style={{ margin: 0, fontSize: '0.75rem', color: '#6b7280' }}>Infoziant Centre of Learning</p>
             </Link>
           </div>

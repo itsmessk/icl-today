@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-col">
-            <h3 style={{ color: '#667eea', fontWeight: 800, marginBottom: '0.5rem' }}>ICL Today</h3>
+            <h3 style={{ color: '#667eea', fontWeight: 800, marginBottom: '0.5rem' }}>ICL</h3>
             <p style={{ fontSize: '0.875rem', color: '#9ca3af', marginBottom: '1rem' }}>Infoziant Centre of Learning</p>
             <p className="footer-description">
               Empowering learners with quality education. Platform under development.
@@ -45,7 +45,7 @@ const Footer = () => {
         
         <div className="footer-bottom">
           <p className="copyright">
-            &copy; {currentYear} ICL Today - Infoziant Centre of Learning. All rights reserved.
+            &copy; {currentYear} ICL - Infoziant Centre of Learning. All rights reserved.
           </p>
         </div>
       </div>
