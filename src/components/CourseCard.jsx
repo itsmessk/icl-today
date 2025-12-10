@@ -41,7 +41,7 @@ const CourseCard = ({ course }) => {
           </div>
           <div className="course-price">
             {formatPrice(course.price)} (inclusive of GST)
-            <span style={{ fontSize: '0.7em', color: '#95a5a6', display: 'block', marginTop: '2px' }}>*18% taxes applicable</span>
+            {/* <span style={{ fontSize: '0.7em', color: '#95a5a6', display: 'block', marginTop: '2px' }}>*18% taxes applicable</span> */}
           </div>
         </div>
         <div className="course-footer">

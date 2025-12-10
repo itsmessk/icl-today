@@ -111,7 +111,7 @@ const CourseDetails = ({ user }) => {
                         {course.originalPrice && (
                           <span className="price-original">₹{course.originalPrice}</span>
                         )}
-                        <span style={{ fontSize: '0.75em', color: '#95a5a6', display: 'block', marginTop: '4px' }}>*18% taxes applicable</span>
+                        {/* <span style={{ fontSize: '0.75em', color: '#95a5a6', display: 'block', marginTop: '4px' }}>*18% taxes applicable</span> */}
                       </div>
                       
                       {isEnrolled ? (

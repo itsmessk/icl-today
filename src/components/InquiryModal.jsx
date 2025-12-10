@@ -322,7 +322,10 @@ const InquiryModal = ({ isOpen, onClose, course, onEnrollmentSuccess }) => {
             
             <div className="course-info-summary">
               <p><strong>Course:</strong> {course.title}</p>
-              <p><strong>Price:</strong> ₹{course.price} (inclusive of GST) <span style={{ fontSize: '0.85em', color: '#95a5a6' }}>(*18% taxes applicable)</span></p>
+              <p>
+                <strong>Price:</strong> ₹{course.price} (inclusive of GST) 
+                {/* <span style={{ fontSize: '0.85em', color: '#95a5a6' }}>(*18% taxes applicable)</span> */}
+              </p>
               <p><strong>Duration:</strong> {course.duration}</p>
 
             </div>
@@ -347,7 +350,9 @@ const InquiryModal = ({ isOpen, onClose, course, onEnrollmentSuccess }) => {
                 <p><strong>Year:</strong> {formData.year}</p>
                 <p><strong>Department:</strong> {formData.department}</p>
                 <p><strong>Course:</strong> {course.title}</p>
-                <p><strong>Price:</strong> ₹{course.price} (inclusive of GST) <span style={{ fontSize: '0.85em', color: '#95a5a6' }}>(*18% taxes applicable)</span></p>
+                <p><strong>Price:</strong> ₹{course.price} (inclusive of GST) 
+                 {/* <span style={{ fontSize: '0.85em', color: '#95a5a6' }}>(*18% taxes applicable)</span> */}
+                </p> 
               </div>
             </div>
             

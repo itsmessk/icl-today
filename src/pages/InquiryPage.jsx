@@ -278,7 +278,9 @@ const InquiryPage = () => {
             
             <div className="course-info-summary">
               <p><strong>Course:</strong> {mockCourse.title}</p>
-              <p><strong>Price:</strong> ₹{mockCourse.price} <span style={{ fontSize: '0.85em', color: '#95a5a6' }}>(*18% taxes applicable)</span></p>
+              <p><strong>Price:</strong> ₹{mockCourse.price} 
+              {/* <span style={{ fontSize: '0.85em', color: '#95a5a6' }}>(*18% taxes applicable)</span> */}
+              </p>
               <p><strong>Duration:</strong> {mockCourse.duration}</p>
             </div>
             
@@ -301,7 +303,9 @@ const InquiryPage = () => {
                 <p><strong>Year:</strong> {formData.year}</p>
                 <p><strong>Department:</strong> {formData.department}</p>
                 <p><strong>Course:</strong> {mockCourse.title}</p>
-                <p><strong>Price:</strong> ₹{mockCourse.price} <span style={{ fontSize: '0.85em', color: '#95a5a6' }}>(*18% taxes applicable)</span></p>
+                <p><strong>Price:</strong> ₹{mockCourse.price} 
+                {/* <span style={{ fontSize: '0.85em', color: '#95a5a6' }}>(*18% taxes applicable)</span> */}
+                </p>
               </div>
             </div>
             
