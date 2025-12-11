@@ -18,11 +18,11 @@ export default function Footer() {
           {/* Left: Company Info */}
           <div className="w-full md:w-[40%] space-y-4 md:ml-8 text-center md:text-left">
             <h2 className="text-4xl font-extrabold bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent bg-clip-text">ICL</h2>
-            <p className="text-sm text-gray-300">www.icltoday.com</p>
+            <p className="text-sm text-gray-300">www.icl.today</p>
 
             <div className="flex items-start gap-2 justify-center md:justify-start text-xs sm:text-sm">
               <FaEnvelope className="mt-1" />
-              <span>support@icltoday.com</span>
+              <span>support@icl.today</span>
             </div>
             <div className="flex items-start gap-2 justify-center md:justify-start text-xs sm:text-sm">
               <FaMapMarkerAlt className="mt-1" />
@@ -116,10 +116,10 @@ export default function Footer() {
                       {openCybersecurity && (
                         <ul className="pl-4 mt-2 space-y-1">
                           <li className="hover:text-teal-400 font-semibold">
-                            <Link to="/services/cybersecurity">Cybersecurity Services</Link>
+                            <a href="https://infoziant.com/services/cybersecurity" target="_blank" rel="noopener noreferrer">Cybersecurity Services</a>
                           </li>
                           <li className="hover:text-teal-400 font-semibold">
-                            <Link to="/services/vapt">VAPT Services</Link>
+                            <a href="https://infoziant.com/services/vapt" target="_blank" rel="noopener noreferrer">VAPT Services</a>
                           </li>
                         </ul>
                       )}
@@ -139,10 +139,10 @@ export default function Footer() {
                       {openAI && (
                         <ul className="pl-4 mt-2 space-y-1">
                           <li className="hover:text-teal-400 font-semibold">
-                            <Link to="/services/genai">GenAI Servies</Link>
+                            <a href="https://infoziant.com/services/genai" target="_blank" rel="noopener noreferrer">GenAI Services</a>
                           </li>
                           <li className="hover:text-teal-400 font-semibold">
-                            <Link to="/services/llm">LLM Servies</Link>
+                            <a href="https://infoziant.com/services/llm" target="_blank" rel="noopener noreferrer">LLM Services</a>
                           </li>
                         </ul>
                       )}
@@ -151,15 +151,15 @@ export default function Footer() {
 
                     {/* Other tech services */}
                     <li className="hover:text-teal-400 font-semibold">
-                      <Link to="/services/webapp">Web & App Development</Link>
+                      <a href="https://infoziant.com/services/webapp" target="_blank" rel="noopener noreferrer">Web & App Development</a>
                     </li>
                     <li className="hover:text-teal-400 font-semibold">
-                      <Link to="/services/testing">Software Testing</Link>
+                      <a href="https://infoziant.com/services/testing" target="_blank" rel="noopener noreferrer">Software Testing</a>
                     </li>
                     <li className="hover:text-teal-400 font-semibold">
-                      <Link to="/services/techtalent">
+                      <a href="https://infoziant.com/services/techtalent" target="_blank" rel="noopener noreferrer">
                         Tech Talent Hiring (Staffing Services)
-                      </Link>
+                      </a>
                     </li>
                   </ul>
                 )}
@@ -203,4 +203,35 @@ export default function Footer() {
                 <Link
                   to="/"
                   state={{ scrollTo: 'portfolio' }}
-               
+                  className="block text-teal-200 hover:text-blue-500 font-semibold text-sm sm:text-base text-center sm:text-left"
+                >
+                  Case Studies
+                </Link>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Footer */}
+        <div className="text-center text-xs sm:text-sm text-gray-400 border-t border-gray-700 pt-4 mt-8 -mb-8 space-y-2">
+          {/* ✅ Policy Links */}
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-6">
+      <Link to="/refund" className="hover:text-teal-300 transition-colors duration-200 cursor-pointer">Refund Policy</Link>
+            <span>|</span>
+            <Link to="/privacypolicy" className="hover:text-teal-300 transition-colors duration-200 cursor-pointer">Privacy Policy</Link>
+            <span>|</span>
+            <Link to="/termsandconditions" className="hover:text-teal-300 transition-colors duration-200 cursor-pointer">Terms & Conditions</Link>
+          </div>
+
+          {/* © ICL */}
+          <p>
+            © 2025 ICL - www.icl.today. All rights reserved.<br />
+           
+          </p>
+        </div>
+
+      </div>
+    </footer>
+  );
+}
