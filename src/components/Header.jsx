@@ -11,7 +11,6 @@ const Header = () => {
     { name: "Placement Support", path: "/placement" },
     { name: "Internship Programs", path: "/internship" },
     { name: "Centre Of Excellence", path: "/coe" },
-    { name: "Training & Upskilling", path: "/training" },
     { name: "CodeChef Training", path: "/codechef" },
     { name: "Edutech Solutions", path: "/edutech" },
   ];
