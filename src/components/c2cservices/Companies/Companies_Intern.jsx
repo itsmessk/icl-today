@@ -4,13 +4,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import EY from '../../../assets/companyimages/EYglobal.png';
 import Flipkart from '../../../assets/companyimages/Flipkart.png';
-import Intel from '../../../assets/companyimages/Intel.png';
+import Intel from '../../../assets/companyimages/intel.png';
 import Uber from '../../../assets/companyimages/Uber.png';
 import Walmart from '../../../assets/companyimages/Walmart.jpg';
 import Atlassian from '../../../assets/companyimages/Atlassian.png';
 import BNYMelon from '../../../assets/companyimages/BNY Melon.jpg';
 import TexasInstruments from '../../../assets/companyimages/Texas Instruments.jpg';
-import TechMahindra from '../../../assets/companyimages/Tech mahindra.png';
+import TechMahindra from '../../../assets/companyimages/Tech Mahindra.png';
 import BirlaSoft from '../../../assets/companyimages/Birla soft.jpeg';
 import FirstSource from '../../../assets/companyimages/First source.png';
 import Spinny from '../../../assets/companyimages/Spinny.jpg';
@@ -20,7 +20,7 @@ import Juspay from '../../../assets/companyimages/Jus pay.png';
 import Hackerearth from '../../../assets/companyimages/Hackerearth.png';
 import Unstop from '../../../assets/companyimages/Unstop.png';
 import Guidewire from '../../../assets/companyimages/Guidewire.png';
-import TEMSTech from '../../../assets/companyimages/TEMS Tech.jpeg';
+import TEMSTech from '../../../assets/companyimages/TEMS tech.jpeg';
 import Recynergy from '../../../assets/companyimages/Recynergy.jpeg';
 
 const images = [

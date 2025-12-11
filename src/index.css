@@ -89,7 +89,7 @@ html {
   animation: slideInFromLeft 0.5s ease-out;
 }
 .HomeBanner-bg-back{
-  background-image: url("./assests/info-bg.jpg");
+  background-image: url("./assets/info-bg.jpg");
   background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
