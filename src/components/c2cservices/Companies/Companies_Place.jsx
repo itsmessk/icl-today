@@ -24,7 +24,7 @@ import image19 from '../../../assets/Companylogos/19.png';
 import image20 from '../../../assets/Companylogos/20.png';
 import image21 from '../../../assets/Companylogos/21.png';
 import image22 from '../../../assets/Companylogos/22.png';
-import image23 from '../../../assets/Companylogos/23.png';
+// import image23 from '../../../assets/Companylogos/23.png';
 import image24 from '../../../assets/Companylogos/24.png';
 import image25 from '../../../assets/Companylogos/25.png';
 import image26 from '../../../assets/Companylogos/26.png';

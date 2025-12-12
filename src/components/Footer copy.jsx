@@ -31,44 +31,44 @@ export default function Footer() {
               </a>
             </div>
           </div>
-              <div className="space-y-4 text-center md:text-left text-sm text-gray-300">
+          <div className="space-y-4 text-center md:text-left text-sm text-gray-300">
 
-  {/* Chennai */}
-  <div>
-    <h4 className="font-semibold text-gray-100 flex items-center gap-2 justify-center md:justify-start">
-      <FaMapMarkerAlt className="text-teal-300" />
-      Chennai
-    </h4>
-    <p className="mt-1 leading-relaxed">
-      Akshaya HQ, Rajiv Gandhi Salai,<br />
-      Kazhipattur,<br />
-      Tamil Nadu, Chennai - 603103, India
-    </p>
-  </div>
+            {/* Chennai */}
+            <div>
+              <h4 className="font-semibold text-gray-100 flex items-center gap-2 justify-center md:justify-start">
+                <FaMapMarkerAlt className="text-teal-300" />
+                Chennai
+              </h4>
+              <p className="mt-1 leading-relaxed">
+                Akshaya HQ, Rajiv Gandhi Salai,<br />
+                Kazhipattur,<br />
+                Tamil Nadu, Chennai - 603103, India
+              </p>
+            </div>
 
-  {/* USA */}
-  <div>
-    <h4 className="font-semibold text-gray-100 flex items-center gap-2 justify-center md:justify-start">
-      <FaMapMarkerAlt className="text-teal-300" />
-      United States
-    </h4>
-    <p className="mt-1 leading-relaxed">
-      1401, 21st ST STE 6310,<br />
-      Sacramento, CA 95811, USA<br />
-      <span className="flex items-center gap-2 justify-center md:justify-start mt-1">
-        <FaPhoneAlt className="text-teal-300" />
-        Tel:{" "}
-        <a href="tel:+19402907007" className="hover:underline text-gray-200">
-          +1 (940) 290 7007
-        </a>
-      </span>
-    </p>
-  </div>
+            {/* USA */}
+            <div>
+              <h4 className="font-semibold text-gray-100 flex items-center gap-2 justify-center md:justify-start">
+                <FaMapMarkerAlt className="text-teal-300" />
+                United States
+              </h4>
+              <p className="mt-1 leading-relaxed">
+                1401, 21st ST STE 6310,<br />
+                Sacramento, CA 95811, USA<br />
+                <span className="flex items-center gap-2 justify-center md:justify-start mt-1">
+                  <FaPhoneAlt className="text-teal-300" />
+                  Tel:{" "}
+                  <a href="tel:+19402907007" className="hover:underline text-gray-200">
+                    +1 (940) 290 7007
+                  </a>
+                </span>
+              </p>
+            </div>
 
-</div>
+          </div>
 
 
-        <div className="text-center md:text-left">
+          <div className="text-center md:text-left">
             <h3 className="text-md font-semibold text-gray-100 mb-2">Navigation</h3>
             <ul className="space-y-2">
               <li className="text-sm font-medium text-teal-200 hover:text-blue-400 transition-colors duration-150">
@@ -94,25 +94,25 @@ export default function Footer() {
 
 
           {/* Technical Support */}
-<div className="footer-support text-center md:text-left">
-  <h3 className="text-md font-semibold text-gray-100 mb-3">Technical Support</h3>
+          <div className="footer-support text-center md:text-left">
+            <h3 className="text-md font-semibold text-gray-100 mb-3">Technical Support</h3>
 
-  <div className="space-y-2 text-gray-300 text-sm">
-    <p className="flex items-center justify-center md:justify-start gap-2">
-      <FaEnvelope className="text-teal-300 text-lg" />
-      <a href="mailto:Hariraj_infozinat.com" className="hover:text-teal-200 transition font-medium">
-        Hariraj_infozinat.com
-      </a>
-    </p>
+            <div className="space-y-2 text-gray-300 text-sm">
+              <p className="flex items-center justify-center md:justify-start gap-2">
+                <FaEnvelope className="text-teal-300 text-lg" />
+                <a href="mailto:Hariraj_infozinat.com" className="hover:text-teal-200 transition font-medium">
+                  Hariraj_infozinat.com
+                </a>
+              </p>
 
-    <p className="flex items-center justify-center md:justify-start gap-2">
-      <FaMapMarkerAlt className="text-teal-300 text-lg" />
-      <a href="tel:+918667214326" className="hover:text-teal-200 transition font-medium">
-        +91 86672 14326
-      </a>
-    </p>
-  </div>
-</div>
+              <p className="flex items-center justify-center md:justify-start gap-2">
+                <FaMapMarkerAlt className="text-teal-300 text-lg" />
+                <a href="tel:+918667214326" className="hover:text-teal-200 transition font-medium">
+                  +91 86672 14326
+                </a>
+              </p>
+            </div>
+          </div>
 
         </div>
 

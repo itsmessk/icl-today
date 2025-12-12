@@ -23,7 +23,7 @@ import image19 from "../../../assets/Companylogos/19.png";
 import image20 from "../../../assets/Companylogos/20.png";
 import image21 from "../../../assets/Companylogos/21.png";
 import image22 from "../../../assets/Companylogos/22.png";
-import image23 from "../../../assets/Companylogos/23.png";
+// import image23 from "../../../assets/Companylogos/23.png";
 import image24 from "../../../assets/Companylogos/24.png";
 import image25 from "../../../assets/Companylogos/25.png";
 import image26 from "../../../assets/Companylogos/26.png";
@@ -40,10 +40,10 @@ import image36 from "../../../assets/Companylogos/36.png";
 import image37 from "../../../assets/Companylogos/37.png";
 import image38 from "../../../assets/Companylogos/38.png";
 import image39 from "../../../assets/Companylogos/39.png";
-import image40 from "../../../assets/Companylogos/40.png";
-import image41 from "../../../assets/Companylogos/41.png";
+// import image40 from "../../../assets/Companylogos/40.png";
+// import image41 from "../../../assets/Companylogos/41.png";
 import image42 from "../../../assets/Companylogos/42.png";
-import image43 from "../../../assets/Companylogos/43.png";
+// import image43 from "../../../assets/Companylogos/43.png";
 import image44 from "../../../assets/Companylogos/44.png";
 import image45 from "../../../assets/Companylogos/45.png";
 import image46 from "../../../assets/Companylogos/46.png";
@@ -91,7 +91,6 @@ const images = [
   image20,
   image21,
   image22,
-  image23,
   image24,
   image25,
   image26,
@@ -108,10 +107,7 @@ const images = [
   image37,
   image38,
   image39,
-  image40,
-  image41,
   image42,
-  image43,
   image44,
   image45,
   image46,
