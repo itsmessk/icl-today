@@ -1,12 +1,14 @@
 import { FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { FiLinkedin, FiInstagram } from "react-icons/fi";
+import { FaPhoneAlt } from "react-icons/fa";
+
 import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-200 py-6">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8 items-start">
 
           <div className="space-y-2 text-center md:text-left">
             <Link className="text-3xl font-extrabold bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent bg-clip-text">
@@ -30,48 +32,88 @@ export default function Footer() {
             </div>
           </div>
               <div className="space-y-4 text-center md:text-left text-sm text-gray-300">
-            <div>
-              <h4 className="font-semibold text-gray-100">Chennai</h4>
-              <p className="mt-1 leading-relaxed">
-                Akshaya HQ, Rajiv Gandhi Salai,
-                <br />Kazhipattur,
-                <br />Tamil Nadu, Chennai - 603103, India
-              </p>
-            </div>
 
-            <div>
-              <h4 className="font-semibold text-gray-100">United States</h4>
-              <p className="mt-1 leading-relaxed">
-                1401, 21st ST STE 6310,
-                <br />Sacramento, CA 95811, USA
-                <br />Tel: <a href="tel:+19402907007" className="hover:underline text-gray-200">+1 (940) 290 7007</a>
-              </p>
-            </div>
-          </div>
+  {/* Chennai */}
+  <div>
+    <h4 className="font-semibold text-gray-100 flex items-center gap-2 justify-center md:justify-start">
+      <FaMapMarkerAlt className="text-teal-300" />
+      Chennai
+    </h4>
+    <p className="mt-1 leading-relaxed">
+      Akshaya HQ, Rajiv Gandhi Salai,<br />
+      Kazhipattur,<br />
+      Tamil Nadu, Chennai - 603103, India
+    </p>
+  </div>
+
+  {/* USA */}
+  <div>
+    <h4 className="font-semibold text-gray-100 flex items-center gap-2 justify-center md:justify-start">
+      <FaMapMarkerAlt className="text-teal-300" />
+      United States
+    </h4>
+    <p className="mt-1 leading-relaxed">
+      1401, 21st ST STE 6310,<br />
+      Sacramento, CA 95811, USA<br />
+      <span className="flex items-center gap-2 justify-center md:justify-start mt-1">
+        <FaPhoneAlt className="text-teal-300" />
+        Tel:{" "}
+        <a href="tel:+19402907007" className="hover:underline text-gray-200">
+          +1 (940) 290 7007
+        </a>
+      </span>
+    </p>
+  </div>
+
+</div>
+
 
         <div className="text-center md:text-left">
             <h3 className="text-md font-semibold text-gray-100 mb-2">Navigation</h3>
-            <ul className="space-y-2 md:ml-2">
-              <li className="text-md font-medium text-teal-200 hover:text-blue-400 transition-colors duration-150">
+            <ul className="space-y-2">
+              <li className="text-sm font-medium text-teal-200 hover:text-blue-400 transition-colors duration-150">
                 <Link to="/courses">Courses</Link>
               </li>
-              <li className="text-md font-medium text-teal-200 hover:text-blue-400 transition-colors duration-150">
+              <li className="text-sm font-medium text-teal-200 hover:text-blue-400 transition-colors duration-150">
                 <Link to="/placement">Placement Support</Link>
               </li>
-              <li className="text-md font-medium text-teal-200 hover:text-blue-400 transition-colors duration-150">
+              <li className="text-sm font-medium text-teal-200 hover:text-blue-400 transition-colors duration-150">
                 <Link to="/internship">Internship Programs</Link>
               </li>
-              <li className="text-md font-medium text-teal-200 hover:text-blue-400 transition-colors duration-150">
+              <li className="text-sm font-medium text-teal-200 hover:text-blue-400 transition-colors duration-150">
                 <Link to="/coe">Center of Excellence</Link>
               </li>
-              <li className="text-md font-medium text-teal-200 hover:text-blue-400 transition-colors duration-150">
+              <li className="text-sm font-medium text-teal-200 hover:text-blue-400 transition-colors duration-150">
                 <Link to="/codechef">CodeChef Training</Link>
               </li>
-              <li className="text-md font-medium text-teal-200 hover:text-blue-400 transition-colors duration-150">
+              <li className="text-sm font-medium text-teal-200 hover:text-blue-400 transition-colors duration-150">
                 <Link to="/edutech">EduTech Solutions</Link>
               </li>
             </ul>
           </div>
+
+
+          {/* Technical Support */}
+<div className="footer-support text-center md:text-left">
+  <h3 className="text-md font-semibold text-gray-100 mb-3">Technical Support</h3>
+
+  <div className="space-y-2 text-gray-300 text-sm">
+    <p className="flex items-center justify-center md:justify-start gap-2">
+      <FaEnvelope className="text-teal-300 text-lg" />
+      <a href="mailto:Hariraj_infozinat.com" className="hover:text-teal-200 transition font-medium">
+        Hariraj_infozinat.com
+      </a>
+    </p>
+
+    <p className="flex items-center justify-center md:justify-start gap-2">
+      <FaMapMarkerAlt className="text-teal-300 text-lg" />
+      <a href="tel:+918667214326" className="hover:text-teal-200 transition font-medium">
+        +91 86672 14326
+      </a>
+    </p>
+  </div>
+</div>
+
         </div>
 
         {/* Bottom Footer */}
