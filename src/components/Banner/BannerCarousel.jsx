@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
-import { Link, useLocation } from "react-router-dom"; // ⬅️ add this
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import InquiryFormSerivies from "../InquiryFormSerivies";
 
 import placementImage from "../../assets/Images/Banner/18-1.webp";
@@ -41,7 +41,8 @@ const pathToSlideIndex = {
 };
 
 function BannerCarousel() {
-  const location = useLocation(); // ⬅️ current route
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const slides = [
     {
@@ -51,7 +52,7 @@ function BannerCarousel() {
       description:
         "We bridge the gap between institutions and industry by enabling seamless placement opportunities tailored to your students' career goals.",
       primaryBtnText: "Explore Now",
-      primaryBtnLink: "/placement", 
+      primaryBtnLink: "/placement",
       secondaryBtnText: "Contact Us",
       secondaryBtnLink: "#contact",
       image: placementImage,
@@ -106,12 +107,12 @@ function BannerCarousel() {
     },
     {
       badgeText: "Campus to Corporate Services",
-      title: "Training and Upskilling",
-      subtitle: "Empower Students with CodeChef – Powered by Infoziant",
+      title: "Courses",
+      subtitle: "Industry-Aligned Training Programs",
       description:
-        "As a licensed partner of CodeChef, Infoziant brings a global learning platform to your institution.",
+        "Our courses are designed in collaboration with industry experts to ensure students gain relevant skills that enhance their employability.",
       primaryBtnText: "Explore our Training",
-      primaryBtnLink: "/training",
+      primaryBtnLink: "/courses",
       secondaryBtnText: "Contact Us",
       secondaryBtnLink: "#contact",
       image: TrainingImage,
@@ -133,7 +134,13 @@ function BannerCarousel() {
   const isInView = useInView(ref, { once: false, margin: "-100px" });
   const activeSlide = slides[current];
 
-  // 🔄 When URL changes (menu click), jump to the right slide
+  // helper: derive an element id from a route path like "/placement" -> "placement"
+  const idFromPath = (path) => {
+    if (!path) return "top";
+    return path.replace(/^\//, "").replace(/\//g, "-") || "top";
+  };
+
+  // When URL changes (menu click or navigation), jump to the right slide
   useEffect(() => {
     const targetIndex = pathToSlideIndex[location.pathname];
 
@@ -141,7 +148,34 @@ function BannerCarousel() {
       setDirection(targetIndex > current ? 1 : -1);
       setCurrent(targetIndex);
     }
-  }, [location.pathname]); // eslint-disable-line react-hooks/exhaustive-deps
+
+    // If navigation included a scroll target in location.state, attempt to scroll after a short delay
+    const scrollToId = location.state?.scrollTo;
+    if (scrollToId) {
+      const t = setTimeout(() => {
+        const el = document.getElementById(scrollToId);
+        if (el) {
+          // if you have a fixed header, subtract its height here
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        } else {
+          // fallback: scroll down by a viewport fraction
+          window.scrollBy({ top: window.innerHeight * 0.8, behavior: "smooth" });
+        }
+
+        // Clear history state so repeated navigations don't try to scroll again.
+        try {
+          // Replace current history entry state with empty state (keeps same URL)
+          window.history.replaceState({}, document.title);
+        } catch (err) {
+          // ignore if browser blocks this
+        }
+      }, 120);
+
+      return () => clearTimeout(t);
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location.pathname]);
 
   useEffect(() => {
     if (slides.length <= 1 || isHovered) return;
@@ -160,14 +194,31 @@ function BannerCarousel() {
     setCurrent(index);
   };
 
-   return (
+  const handlePrimaryClick = (e) => {
+    const targetPath = activeSlide.primaryBtnLink;
+    const targetId = idFromPath(targetPath);
+
+    if (location.pathname === targetPath) {
+      // same page: scroll to element if exists
+      const el = document.getElementById(targetId);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      } else {
+        window.scrollBy({ top: window.innerHeight * 0.8, behavior: "smooth" });
+      }
+    } else {
+      // different route: navigate + pass desired scroll target in location.state
+      navigate(targetPath, { state: { scrollTo: targetId } });
+    }
+  };
+
+  return (
     <section
       ref={ref}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className="relative px-4 sm:px-6 w-full min-h-[600px] sm:h-[530px] overflow-hidden bg-gradient-to-br from-white via-blue-50 to-white text-gray-900 flex items-center"
     >
-        
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <motion.div
@@ -213,12 +264,13 @@ function BannerCarousel() {
               </p>
 
               <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-2">
-                <Link
-                  to={activeSlide.primaryBtnLink}
+                {/* Primary button uses handler */}
+                <button
+                  onClick={handlePrimaryClick}
                   className="px-6 sm:px-8 py-3 bg-gradient-to-r from-blue-600 to-teal-500 text-white font-semibold rounded-full shadow-lg hover:shadow-blue-300/40 transition inline-flex items-center justify-center"
                 >
                   {activeSlide.primaryBtnText}
-                </Link>
+                </button>
 
                 <button
                   onClick={() => setShowForm(true)}
@@ -258,11 +310,13 @@ function BannerCarousel() {
           ))}
         </div>
       </div>
- <div className="hidden sm:flex flex-col gap-2 absolute left-4 bottom-10">
-          <span className="w-2 h-2 rounded-full bg-blue-300" />
-          <span className="w-2 h-2 rounded-full bg-blue-300/70" />
-          <span className="w-2 h-2 rounded-full bg-blue-300/40" />
-        </div>
+
+      <div className="hidden sm:flex flex-col gap-2 absolute left-4 bottom-10">
+        <span className="w-2 h-2 rounded-full bg-blue-300" />
+        <span className="w-2 h-2 rounded-full bg-blue-300/70" />
+        <span className="w-2 h-2 rounded-full bg-blue-300/40" />
+      </div>
+
       {showForm && (
         <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4">
           <InquiryFormSerivies closeModal={() => setShowForm(false)} />
@@ -271,4 +325,5 @@ function BannerCarousel() {
     </section>
   );
 }
+
 export default BannerCarousel;

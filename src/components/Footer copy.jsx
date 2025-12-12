@@ -1,236 +1,93 @@
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { FiLinkedin, FiInstagram } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
-
-import { useState } from "react";
-
 export default function Footer() {
-  const [openTech, setOpenTech] = useState(false);
-  const [openCampus, setOpenCampus] = useState(false);
-  const [openCybersecurity, setOpenCybersecurity] = useState(false);
-  const [openAI, setOpenAI] = useState(false);
-
   return (
-    <footer className="bg-gray-800 text-white py-8 sm:py-12">
+    <footer className="bg-gray-900 text-gray-200 py-6">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-start gap-8 sm:gap-10">
-          {/* Left: Company Info */}
-          <div className="w-full md:w-[40%] space-y-4 md:ml-8 text-center md:text-left">
-            <h2 className="text-4xl font-extrabold bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent bg-clip-text">ICL</h2>
-            <p className="text-sm text-gray-300">www.icl.today</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-start">
 
-            <div className="flex items-start gap-2 justify-center md:justify-start text-xs sm:text-sm">
-              <FaEnvelope className="mt-1" />
-              <span>support@icl.today</span>
+          <div className="space-y-2 text-center md:text-left">
+            <Link className="text-3xl font-extrabold bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent bg-clip-text">
+              ICL
+            </Link>
+            <p className="text-xs sm:text-sm text-gray-400">www.icl.today</p>
+
+            <div className="mt-2 flex flex-wrap gap-2 justify-center md:justify-start">
+              <span className="text-xs bg-gray-800 text-gray-300 px-2 py-1 rounded-full">Industry-aligned curriculum</span>
+              <span className="text-xs bg-gray-800 text-gray-300 px-2 py-1 rounded-full">Hands-on projects</span>
+              <span className="text-xs bg-gray-800 text-gray-300 px-2 py-1 rounded-full">Placement support</span>
             </div>
-            <div className="flex items-start gap-2 justify-center md:justify-start text-xs sm:text-sm">
-              <FaMapMarkerAlt className="mt-1" />
-              <span>
-                <strong>Chennai:</strong> Akshaya HQ, Rajiv Gandhi <br />
-                Salai, Kazhipattur, <br />
-                Tamil Nadu, Chennai - 603103, India
-              </span>
-            </div>
-            <div className="flex items-start gap-2 justify-center md:justify-start text-xs sm:text-sm">
-              <FaMapMarkerAlt className="mt-1" />
-              <span>
-                <strong>United States:</strong> 1401, 21st ST STE 6310,
-                <br />Sacramento, CA 95811, USA
-                <br /><a href="tel:+19402907007">+1 (940) 290 7007</a>
-              </span>
-            </div>
-            <div className="flex gap-4 pt-4 justify-center md:justify-start">
-              <a href="https://www.linkedin.com" target="_blank" className="text-white text-2xl hover:text-gray-300">
+
+            <div className="flex gap-3 pt-3 justify-center md:justify-start text-lg">
+              <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-gray-200 hover:text-gray-300">
                 <FiLinkedin />
               </a>
-              <a href="https://www.instagram.com" target="_blank" className="text-white text-2xl hover:text-gray-300">
+              <a href="https://www.instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram" className="text-gray-200 hover:text-gray-300">
                 <FiInstagram />
               </a>
             </div>
           </div>
-
-          {/* Vertical Divider */}
-          <div className="hidden md:block w-px bg-gray-600 mx-4 self-stretch"></div>
-
-          {/* Right Side: Navigation & Services */}
-          <div className="w-full md:w-[55%] md:mr-10 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-            {/* Navigation */}
-            <div className="flex flex-col items-center md:items-start text-center md:text-left gap-2 sm:gap-3">
-              <h3 className="text-xl sm:text-2xl font-extrabold bg-gradient-to-br from-teal-400 to-blue-800 text-transparent bg-clip-text mb-4">
-                Navigation
-              </h3>
-              <ul className="space-y-1 sm:space-y-2 md:ml-6 md:mb-2 -mt-2">
-                <li className="cursor-pointer font-semibold text-teal-200 hover:text-blue-500 transition-colors duration-200 text-sm sm:text-base">
-                  <Link to="/">Home</Link>
-                </li>
-                <li className="cursor-pointer font-semibold text-teal-200 hover:text-blue-500 transition-colors duration-200 text-sm sm:text-base">
-                  <Link to="/courses">Courses</Link>
-                </li>
-                <li className="cursor-pointer font-semibold text-teal-200 hover:text-blue-500 transition-colors duration-200 text-sm sm:text-base">
-                  <a href="https://infoziant.com/about" target="_blank" rel="noopener noreferrer">About</a>
-                </li>
-                <li className="cursor-pointer font-semibold text-teal-200 hover:text-blue-500 transition-colors duration-200 text-sm sm:text-base">
-                  <a href="https://infoziant.com/product" target="_blank" rel="noopener noreferrer">Product</a>
-                </li>
-                <li className="cursor-pointer font-semibold text-teal-200 hover:text-blue-500 transition-colors duration-200 text-sm sm:text-base">
-                  <a href="https://infoziant.com/awards" target="_blank" rel="noopener noreferrer">Awards</a>
-                </li>
-                <li className="cursor-pointer font-semibold text-teal-200 hover:text-blue-500 transition-colors duration-200 text-sm sm:text-base">
-                  <a href="https://infoziant.com/blogs" target="_blank" rel="noopener noreferrer">Blogs</a>
-                </li>
-                <li className="cursor-pointer font-semibold text-teal-200 hover:text-blue-500 transition-colors duration-200 text-sm sm:text-base">
-                  <a href="https://infoziant.com/contact" target="_blank" rel="noopener noreferrer">Contact</a>
-                </li>
-              </ul>
+              <div className="space-y-4 text-center md:text-left text-sm text-gray-300">
+            <div>
+              <h4 className="font-semibold text-gray-100">Chennai</h4>
+              <p className="mt-1 leading-relaxed">
+                Akshaya HQ, Rajiv Gandhi Salai,
+                <br />Kazhipattur,
+                <br />Tamil Nadu, Chennai - 603103, India
+              </p>
             </div>
 
-            {/* Services */}
-            <div className="flex flex-col items-center md:items-start text-center md:text-left md:-ml-10 mt-6 sm:mt-8 lg:mt-0">
-              <h3 className="text-xl sm:text-2xl font-extrabold bg-gradient-to-br from-teal-400 to-blue-800 text-transparent bg-clip-text mb-4">
-                Services
-              </h3>
-
-              {/* Innovative Tech & Business Services */}
-              <div className="w-full mb-2">
-                <div
-                  className="flex justify-center sm:justify-between items-center cursor-pointer text-teal-200 font-semibold text-sm sm:text-base"
-                  onClick={() => setOpenTech(!openTech)}
-                >
-                  <span>TechEdge</span>
-                  <span className="text-xl ml-1 font-medium">{openTech ? '-' : '+'}</span>
-                </div>
-
-                {openTech && (
-                  <ul className="pl-4 text-xs sm:text-sm space-y-2 mt-2 text-gray-300">
-                    {/* Cybersecurity with toggle */}
-                    <li>
-                      <div
-                        className="flex justify-center sm:justify-between items-center cursor-pointer hover:text-teal-400 font-semibold"
-                        onClick={() => setOpenCybersecurity(!openCybersecurity)}
-                      >
-                        <span>Cybersecurity Services</span>
-                        <span className="text-md ml-1">{openCybersecurity ? '-' : '+'}</span>
-                      </div>
-
-                      {openCybersecurity && (
-                        <ul className="pl-4 mt-2 space-y-1">
-                          <li className="hover:text-teal-400 font-semibold">
-                            <a href="https://infoziant.com/services/cybersecurity" target="_blank" rel="noopener noreferrer">Cybersecurity Services</a>
-                          </li>
-                          <li className="hover:text-teal-400 font-semibold">
-                            <a href="https://infoziant.com/services/vapt" target="_blank" rel="noopener noreferrer">VAPT Services</a>
-                          </li>
-                        </ul>
-                      )}
-                    </li>
-
-
-                    {/* AI with toggle */}
-                    <li>
-                      <div
-                        className="flex justify-center sm:justify-between items-center cursor-pointer hover:text-teal-400 font-semibold"
-                        onClick={() => setOpenAI(!openAI)}
-                      >
-                        <span>AI Services</span>
-                        <span className="text-md ml-1">{openAI ? '-' : '+'}</span>
-                      </div>
-
-                      {openAI && (
-                        <ul className="pl-4 mt-2 space-y-1">
-                          <li className="hover:text-teal-400 font-semibold">
-                            <a href="https://infoziant.com/services/genai" target="_blank" rel="noopener noreferrer">GenAI Services</a>
-                          </li>
-                          <li className="hover:text-teal-400 font-semibold">
-                            <a href="https://infoziant.com/services/llm" target="_blank" rel="noopener noreferrer">LLM Services</a>
-                          </li>
-                        </ul>
-                      )}
-                    </li>
-
-
-                    {/* Other tech services */}
-                    <li className="hover:text-teal-400 font-semibold">
-                      <a href="https://infoziant.com/services/webapp" target="_blank" rel="noopener noreferrer">Web & App Development</a>
-                    </li>
-                    <li className="hover:text-teal-400 font-semibold">
-                      <a href="https://infoziant.com/services/testing" target="_blank" rel="noopener noreferrer">Software Testing</a>
-                    </li>
-                    <li className="hover:text-teal-400 font-semibold">
-                      <a href="https://infoziant.com/services/techtalent" target="_blank" rel="noopener noreferrer">
-                        Tech Talent Hiring (Staffing Services)
-                      </a>
-                    </li>
-                  </ul>
-                )}
-              </div>
-
-              {/* Campus to Corporate Services */}
-              <div className="w-full mb-2">
-                <div
-                  className="flex justify-center sm:justify-between items-center cursor-pointer text-teal-200 font-semibold text-sm sm:text-base"
-                  onClick={() => setOpenCampus(!openCampus)}
-                >
-                  <span>EduConnect</span>
-                  <span className="text-xl ml-1 font-medium">{openCampus ? '-' : '+'}</span>
-                </div>
-                {openCampus && (
-                  <ul className="pl-4 text-xs sm:text-sm space-y-2 mt-2 text-gray-300">
-                    <li className="hover:text-teal-400 font-semibold">
-                      <Link to="/placement">Placement Support</Link>
-                    </li>
-                    <li className="hover:text-teal-400 font-semibold">
-                      <Link to="/internship">Internship Programs</Link>
-                    </li>
-                    <li className="hover:text-teal-400 font-semibold">
-                      <Link to="/training">Training & Upskilling</Link>
-                    </li>
-                    <li className="hover:text-teal-400 font-semibold">
-                      <Link to="/coe">Industry-Academia Collaboration (CoE)</Link>
-                    </li>
-                    <li className="hover:text-teal-400 font-semibold">
-                      <Link to="/codechef">CodeChef Training</Link>
-                    </li>
-                    <li className="hover:text-teal-400 font-semibold">
-                      <Link to="/edutech">Edutech Solutions</Link>
-                    </li>
-                  </ul>
-                )}
-              </div>
-
-              {/* Case Studies */}
-              <div className="w-full mb-2">
-                <Link
-                  to="/"
-                  state={{ scrollTo: 'portfolio' }}
-                  className="block text-teal-200 hover:text-blue-500 font-semibold text-sm sm:text-base text-center sm:text-left"
-                >
-                  Case Studies
-                </Link>
-              </div>
-
+            <div>
+              <h4 className="font-semibold text-gray-100">United States</h4>
+              <p className="mt-1 leading-relaxed">
+                1401, 21st ST STE 6310,
+                <br />Sacramento, CA 95811, USA
+                <br />Tel: <a href="tel:+19402907007" className="hover:underline text-gray-200">+1 (940) 290 7007</a>
+              </p>
             </div>
+          </div>
+
+        <div className="text-center md:text-left">
+            <h3 className="text-md font-semibold text-gray-100 mb-2">Navigation</h3>
+            <ul className="space-y-2 md:ml-2">
+              <li className="text-md font-medium text-teal-200 hover:text-blue-400 transition-colors duration-150">
+                <Link to="/courses">Courses</Link>
+              </li>
+              <li className="text-md font-medium text-teal-200 hover:text-blue-400 transition-colors duration-150">
+                <Link to="/placement">Placement Support</Link>
+              </li>
+              <li className="text-md font-medium text-teal-200 hover:text-blue-400 transition-colors duration-150">
+                <Link to="/internship">Internship Programs</Link>
+              </li>
+              <li className="text-md font-medium text-teal-200 hover:text-blue-400 transition-colors duration-150">
+                <Link to="/coe">Center of Excellence</Link>
+              </li>
+              <li className="text-md font-medium text-teal-200 hover:text-blue-400 transition-colors duration-150">
+                <Link to="/codechef">CodeChef Training</Link>
+              </li>
+              <li className="text-md font-medium text-teal-200 hover:text-blue-400 transition-colors duration-150">
+                <Link to="/edutech">EduTech Solutions</Link>
+              </li>
+            </ul>
           </div>
         </div>
 
         {/* Bottom Footer */}
-        <div className="text-center text-xs sm:text-sm text-gray-400 border-t border-gray-700 pt-4 mt-8 -mb-8 space-y-2">
-          {/* ✅ Policy Links */}
-          <div className="flex flex-wrap justify-center gap-3 sm:gap-6">
-      <Link to="/refund" className="hover:text-teal-300 transition-colors duration-200 cursor-pointer">Refund Policy</Link>
+        <div className="text-center text-xs sm:text-sm text-gray-400 border-t border-gray-800 pt-4 mt-6">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-6 items-center">
+            <Link to="/refund" className="hover:text-teal-300 transition-colors duration-200">Refund Policy</Link>
             <span>|</span>
-            <Link to="/privacypolicy" className="hover:text-teal-300 transition-colors duration-200 cursor-pointer">Privacy Policy</Link>
+            <Link to="/privacypolicy" className="hover:text-teal-300 transition-colors duration-200">Privacy Policy</Link>
             <span>|</span>
-            <Link to="/termsandconditions" className="hover:text-teal-300 transition-colors duration-200 cursor-pointer">Terms & Conditions</Link>
+            <Link to="/termsandconditions" className="hover:text-teal-300 transition-colors duration-200">Terms & Conditions</Link>
           </div>
 
-          {/* © ICL */}
-          <p>
-            © 2025 ICL - www.icl.today. All rights reserved.<br />
-           
+          <p className="mt-3">
+            © 2025 ICL - www.icl.today. All rights reserved.
           </p>
         </div>
-
       </div>
     </footer>
   );

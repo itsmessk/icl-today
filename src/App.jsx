@@ -79,7 +79,6 @@ function App() {
             <Route path="/placement" element={<Placement />} />
             <Route path="/internship" element={<Internship />} />
             <Route path="/coe" element={<COE />} />
-            <Route path="/training" element={<Training />} />
             <Route path="/codechef" element={<CodeChef />} />
             <Route path="/edutech" element={<EduTech />} />
             <Route path="/privacypolicy" element={<PrivacyPolicy />} />
