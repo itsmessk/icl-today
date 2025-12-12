@@ -108,8 +108,8 @@ const CourseDetails = ({ user }) => {
                     <span>{course.level}</span>
                   </div>
                   <div className="meta-item">
-                    <i className="fas fa-clock"></i>
-                    <span>{course.duration}</span>
+                    
+                     <i className="fas fa-award"></i> 3 Credits
                   </div>
                 </div>
 

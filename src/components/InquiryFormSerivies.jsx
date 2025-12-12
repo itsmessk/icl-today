@@ -3,6 +3,7 @@ import emailjs from '@emailjs/browser';
 import { FaCircleCheck } from "react-icons/fa6";
 import { FaTimes } from "react-icons/fa";
 import "../components/css/InquiryForm.css"
+import { FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 
 export default function InquiryFormSerivies({ closeModal }) {
   const [formData, setFormData] = useState({
@@ -42,7 +43,7 @@ export default function InquiryFormSerivies({ closeModal }) {
 
     if (validateForm()) {
       const emailPayload = {
-        mailTo: "support@infoziant.com",
+        mailTo: "Support@icl.today",
         name: formData.name,
         email: formData.email,
         phone: formData.phone,
@@ -105,10 +106,40 @@ export default function InquiryFormSerivies({ closeModal }) {
         <p className="form-desc-i">
           Have a question or need assistance? We're here to help — just drop us a message.
         </p>
-        <p className="support-note-i">
-  For technical support, contact:  
-  <a href="mailto:Hariraj_infozinat.com" className="support-email-i">Hariraj_infozinat.com</a>
-</p>
+        <p className="support-note-i text-center">
+          For technical support, contact:
+          <br />
+
+          <a
+            href="mailto:Support@icl.today"
+            className="support-email-i flex items-center justify-center gap-2 mt-1"
+          >
+            <FaEnvelope className="text-blue-600" />
+            Support@icl.today
+          </a>
+
+         <div className="flex items-center justify-center gap-2 mt-2 text-blue-600">
+  {/* Phone icon */}
+  <FaPhoneAlt  />
+
+  {/* First number */}
+  <a href="tel:+918667214326" className="font-medium">
+    +91 86672 14326
+  </a>
+
+  {/* Slash in same blue color */}
+  <span>/</span>
+
+  {/* Second number */}
+  <a href="tel:+917550272103" className="font-medium">
+    +91 75502 72103
+  </a>
+</div>
+
+
+        </p>
+
+
 
 
         {/* Success message display */}

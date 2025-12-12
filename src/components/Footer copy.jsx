@@ -23,52 +23,52 @@ export default function Footer() {
             </div>
 
             <div className="flex gap-3 pt-3 justify-center md:justify-start text-lg">
-              <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-gray-200 hover:text-gray-300">
+              <a href="https://www.linkedin.com/company/infoziant/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-gray-200 hover:text-gray-300">
                 <FiLinkedin />
               </a>
-              <a href="https://www.instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram" className="text-gray-200 hover:text-gray-300">
+              <a href="https://www.instagram.com/infoziant/" target="_blank" rel="noreferrer" aria-label="Instagram" className="text-gray-200 hover:text-gray-300">
                 <FiInstagram />
               </a>
             </div>
           </div>
-              <div className="space-y-4 text-center md:text-left text-sm text-gray-300">
+          <div className="space-y-4 text-center md:text-left text-sm text-gray-300">
 
-  {/* Chennai */}
-  <div>
-    <h4 className="font-semibold text-gray-100 flex items-center gap-2 justify-center md:justify-start">
-      <FaMapMarkerAlt className="text-teal-300" />
-      Chennai
-    </h4>
-    <p className="mt-1 leading-relaxed">
-      Akshaya HQ, Rajiv Gandhi Salai,<br />
-      Kazhipattur,<br />
-      Tamil Nadu, Chennai - 603103, India
-    </p>
-  </div>
+            {/* Chennai */}
+            <div>
+              <h4 className="font-semibold text-gray-100 flex items-center gap-2 justify-center md:justify-start">
+                <FaMapMarkerAlt className="text-teal-300" />
+                Chennai
+              </h4>
+              <p className="mt-1 leading-relaxed">
+                Akshaya HQ, Rajiv Gandhi Salai,<br />
+                Kazhipattur,<br />
+                Tamil Nadu, Chennai - 603103, India
+              </p>
+            </div>
 
-  {/* USA */}
-  <div>
-    <h4 className="font-semibold text-gray-100 flex items-center gap-2 justify-center md:justify-start">
-      <FaMapMarkerAlt className="text-teal-300" />
-      United States
-    </h4>
-    <p className="mt-1 leading-relaxed">
-      1401, 21st ST STE 6310,<br />
-      Sacramento, CA 95811, USA<br />
-      <span className="flex items-center gap-2 justify-center md:justify-start mt-1">
-        <FaPhoneAlt className="text-teal-300" />
-        Tel:{" "}
-        <a href="tel:+19402907007" className="hover:underline text-gray-200">
-          +1 (940) 290 7007
-        </a>
-      </span>
-    </p>
-  </div>
+            {/* USA */}
+            <div>
+              <h4 className="font-semibold text-gray-100 flex items-center gap-2 justify-center md:justify-start">
+                <FaMapMarkerAlt className="text-teal-300" />
+                United States
+              </h4>
+              <p className="mt-1 leading-relaxed">
+                1401, 21st ST STE 6310,<br />
+                Sacramento, CA 95811, USA<br />
+                <span className="flex items-center gap-2 justify-center md:justify-start mt-1">
+                  <FaPhoneAlt className="text-teal-300" />
+                  Tel:{" "}
+                  <a href="tel:+19402907007" className="hover:underline text-gray-200">
+                    +1 (940) 290 7007
+                  </a>
+                </span>
+              </p>
+            </div>
 
-</div>
+          </div>
 
 
-        <div className="text-center md:text-left">
+          <div className="text-center md:text-left">
             <h3 className="text-md font-semibold text-gray-100 mb-2">Navigation</h3>
             <ul className="space-y-2">
               <li className="text-sm font-medium text-teal-200 hover:text-blue-400 transition-colors duration-150">
@@ -99,16 +99,22 @@ export default function Footer() {
 
   <div className="space-y-2 text-gray-300 text-sm">
     <p className="flex items-center justify-center md:justify-start gap-2">
-      <FaEnvelope className="text-teal-300 text-lg" />
-      <a href="mailto:Hariraj_infozinat.com" className="hover:text-teal-200 transition font-medium">
-        Hariraj_infozinat.com
+      <FaEnvelope className="text-teal-300 text-md" />
+      <a href="mailto:Support@icl.today" className="hover:text-teal-200 transition font-medium">
+        Support@icl.today
       </a>
     </p>
 
     <p className="flex items-center justify-center md:justify-start gap-2">
-      <FaMapMarkerAlt className="text-teal-300 text-lg" />
+      <FaPhoneAlt className="text-teal-300 text-md" />
       <a href="tel:+918667214326" className="hover:text-teal-200 transition font-medium">
         +91 86672 14326
+      </a>
+    </p>
+    <p className="flex items-center justify-center md:justify-start gap-2">
+      <FaPhoneAlt className="text-teal-300 text-md" />
+      <a href="tel:+917550272103" className="hover:text-teal-200 transition font-medium">
+       +91 75502 72103
       </a>
     </p>
   </div>

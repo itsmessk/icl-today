@@ -48,9 +48,7 @@ const CourseCard = ({ course }) => {
           <span className="course-level">
             <i className="fas fa-signal"></i> {course.level}
           </span>
-          <span className="course-duration">
-            <i className="fas fa-clock"></i> {course.duration}
-          </span>
+          
         </div>
         <button
           className="btn btn-primary enter-course-btn"
