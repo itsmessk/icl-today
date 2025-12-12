@@ -75,19 +75,19 @@ export default function Footer() {
                 <Link to="/courses">Courses</Link>
               </li>
               <li className="text-sm font-medium text-teal-200 hover:text-blue-400 transition-colors duration-150">
-                <Link to="/placement">Placement Support</Link>
+                <Link to="/placement">Placement</Link>
               </li>
               <li className="text-sm font-medium text-teal-200 hover:text-blue-400 transition-colors duration-150">
-                <Link to="/internship">Internship Programs</Link>
+                <Link to="/internship">Internship</Link>
               </li>
               <li className="text-sm font-medium text-teal-200 hover:text-blue-400 transition-colors duration-150">
-                <Link to="/coe">Center of Excellence</Link>
+                <Link to="/coe">CoE</Link>
               </li>
               <li className="text-sm font-medium text-teal-200 hover:text-blue-400 transition-colors duration-150">
-                <Link to="/codechef">CodeChef Training</Link>
+                <Link to="/codechef">CodeChef</Link>
               </li>
               <li className="text-sm font-medium text-teal-200 hover:text-blue-400 transition-colors duration-150">
-                <Link to="/edutech">EduTech Solutions</Link>
+                <Link to="/edutech">EduTech</Link>
               </li>
             </ul>
           </div>
