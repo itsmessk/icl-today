@@ -154,3 +154,23 @@
     font-size: 0.8rem; /* Smaller error message font size */
   }
 }
+
+
+
+.support-note-i {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #374151; /* gray-700 */
+  text-align: center;
+}
+
+.support-email-i {
+  color: #2563eb; /* blue-600 */
+  font-weight: 600;
+  margin-left: 5px;
+  text-decoration: none;
+}
+
+.support-email-i:hover {
+  text-decoration: underline;
+}

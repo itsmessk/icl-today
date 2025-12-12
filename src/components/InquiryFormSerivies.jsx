@@ -105,6 +105,11 @@ export default function InquiryFormSerivies({ closeModal }) {
         <p className="form-desc-i">
           Have a question or need assistance? We're here to help — just drop us a message.
         </p>
+        <p className="support-note-i">
+  For technical support, contact:  
+  <a href="mailto:Hariraj_infozinat.com" className="support-email-i">Hariraj_infozinat.com</a>
+</p>
+
 
         {/* Success message display */}
         <div className="center-container-i">
