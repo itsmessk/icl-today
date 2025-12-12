@@ -180,7 +180,7 @@ const PrivacyPolicy = () => {
           </h2>
           <p className="mb-2 text-slate-300 text-sm md:text-base">
             <strong className="font-semibold text-cyan-200">Contact:</strong>{" "}
-            Support@icl.today
+            support@infoziant.com
           </p>
           <p className="mb-2 text-slate-300 text-sm md:text-base">
             <strong className="font-semibold text-cyan-200">Phone:</strong>{" "}

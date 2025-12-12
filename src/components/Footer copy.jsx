@@ -23,10 +23,10 @@ export default function Footer() {
             </div>
 
             <div className="flex gap-3 pt-3 justify-center md:justify-start text-lg">
-              <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-gray-200 hover:text-gray-300">
+              <a href="https://www.linkedin.com/company/infoziant/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-gray-200 hover:text-gray-300">
                 <FiLinkedin />
               </a>
-              <a href="https://www.instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram" className="text-gray-200 hover:text-gray-300">
+              <a href="https://www.instagram.com/infoziant/" target="_blank" rel="noreferrer" aria-label="Instagram" className="text-gray-200 hover:text-gray-300">
                 <FiInstagram />
               </a>
             </div>
@@ -101,7 +101,7 @@ export default function Footer() {
     <p className="flex items-center justify-center md:justify-start gap-2">
       <FaEnvelope className="text-teal-300 text-md" />
       <a href="mailto:Support@icl.today" className="hover:text-teal-200 transition font-medium">
-       Support@icl.today
+        Support@icl.today
       </a>
     </p>
 
@@ -109,6 +109,12 @@ export default function Footer() {
       <FaPhoneAlt className="text-teal-300 text-md" />
       <a href="tel:+918667214326" className="hover:text-teal-200 transition font-medium">
         +91 86672 14326
+      </a>
+    </p>
+    <p className="flex items-center justify-center md:justify-start gap-2">
+      <FaPhoneAlt className="text-teal-300 text-md" />
+      <a href="tel:+917550272103" className="hover:text-teal-200 transition font-medium">
+       +91 75502 72103
       </a>
     </p>
   </div>

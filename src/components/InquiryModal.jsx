@@ -257,18 +257,26 @@ const InquiryModal = ({ isOpen, onClose, course, onEnrollmentSuccess }) => {
             </div>
             
             <div className="form-group">
-              <label htmlFor="organization">Organization/College</label>
-              <input
-                type="text"
-                id="organization"
-                name="organization"
-                value={formData.organization}
-                onChange={handleChange}
-                placeholder="Enter your organization/college"
-                className={errors.organization ? 'error' : ''}
-              />
-              {errors.organization && <span className="error-message">{errors.organization}</span>}
-            </div>
+  <label htmlFor="organization">Organization/College</label>
+
+  <select
+    id="organization"
+    name="organization"
+    value={formData.organization}
+    onChange={handleChange}
+    className={errors.organization ? 'error' : ''}
+  >
+    <option value="">Select your college</option>
+    <option value="Kalasalingam Academy of Research and Education">
+      Kalasalingam Academy of Research and Education
+    </option>
+  </select>
+
+  {errors.organization && (
+    <span className="error-message">{errors.organization}</span>
+  )}
+</div>
+
 
             <div className="form-group">
               <label htmlFor="degree">Degree</label>
@@ -326,7 +334,7 @@ const InquiryModal = ({ isOpen, onClose, course, onEnrollmentSuccess }) => {
                 <strong>Price:</strong> ₹{course.price} (inclusive of GST) 
                 {/* <span style={{ fontSize: '0.85em', color: '#95a5a6' }}>(*18% taxes applicable)</span> */}
               </p>
-              <p><strong>Duration:</strong> {course.duration}</p>
+             
 
             </div>
             
