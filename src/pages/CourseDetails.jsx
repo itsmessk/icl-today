@@ -125,6 +125,9 @@ const CourseDetails = ({ user }) => {
               <div className="course-hero-right">
                 <div className="course-card-sticky">
                   <div className="course-preview-card">
+                     <div className="absolute top-8 right-3 bg-green-500 text-white px-3 py-1 rounded-md text-sm font-semibold shadow-md flex items-center gap-1">
+    <i className="fas fa-award"></i> 3 Credits
+  </div>
                     <img src={course.image} alt={course.title} className="preview-image" />
                     <div className="preview-content">
                       <div className="price-section">
