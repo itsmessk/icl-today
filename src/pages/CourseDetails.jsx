@@ -213,12 +213,7 @@ const CourseDetails = ({ user }) => {
                   >
                     <i className="fas fa-list-ul"></i> Curriculum
                   </button>
-                  <button
-                    className={`tab-btn ${activeTab === 'instructor' ? 'active' : ''}`}
-                    onClick={() => setActiveTab('instructor')}
-                  >
-                    <i className="fas fa-user-tie"></i> Instructor
-                  </button>
+                 
                 </div>
 
                 <div className="tabs-content">

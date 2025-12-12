@@ -10,9 +10,9 @@ const Header = () => {
     { name: "Courses", path: "/courses" },
     { name: "Placement", path: "/placement" },
     { name: "Internship", path: "/internship" },
-    { name: "COE", path: "/coe" },
+    { name: "CoE", path: "/coe" },
     { name: "CodeChef", path: "/codechef" },
-    { name: "Edutech", path: "/edutech" },
+    { name: "EduTech", path: "/edutech" },
   ];
   
 
