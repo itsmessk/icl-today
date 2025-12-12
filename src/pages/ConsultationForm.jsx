@@ -46,7 +46,7 @@ export default function ConsultationForm() {
 
     if (validateForm()) {
       const emailPayload = {
-        mailTo: "support@infoziant.com",
+        mailTo: "Support@icl.today",
         name: formData.name,
         email: formData.email,
         phone: formData.phone,

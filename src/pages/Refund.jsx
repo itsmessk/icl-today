@@ -100,7 +100,7 @@ const Refund = () => {
           </h2>
           <p className="mb-2 text-slate-300 text-sm md:text-base">
             <strong className="font-semibold text-cyan-200">Email:</strong>{" "}
-            support@infoziant.com
+            Support@icl.today
           </p>
           <p className="mb-2 text-slate-300 text-sm md:text-base">
             <strong className="font-semibold text-cyan-200">Phone:</strong>{" "}

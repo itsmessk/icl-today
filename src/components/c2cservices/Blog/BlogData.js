@@ -52,7 +52,7 @@ const BlogData = [
   
         <h3>Get in Touch with Infoziant</h3>
         <p>🌐 Website: www.infoziant.com</p>
-        <p>📧 Email: support@infoziant.com</p>
+        <p>📧 Email: Support@icl.today</p>
         <p>📞 Phone: +91 96000 85988 | 📞 +1 (314) 732 0300</p>
   
         <p>Stay patched. Stay vigilant. Stay secure. 🔐</p>
@@ -121,7 +121,7 @@ const BlogData = [
 
     <h3>Get in Touch with Infoziant</h3>
     <p>🌐 Website: www.infoziant.com<br />
-    📧 Email: support@infoziant.com<br />
+    📧 Email: Support@icl.today<br />
     📞 Phone: +91 96000 85988 | +1 (314) 732 0300</p>
 
     <p><strong>Stay patched. Stay vigilant. Stay secure. 🔐</strong></p>
@@ -175,7 +175,7 @@ const BlogData = [
 
     <h3>Get in Touch with Infoziant</h3>
     <p>🌐 Website: www.infoziant.com<br />
-    📧 Email: support@infoziant.com<br />
+    📧 Email: Support@icl.today<br />
     📞 Phone: +91 96000 85988 | +1 (314) 732 0300</p>
   `
 },
@@ -228,7 +228,7 @@ const BlogData = [
 
     <h3>Get in Touch with Infoziant</h3>
     <p>🌐 Website: www.infoziant.com<br />
-    📧 Email: support@infoziant.com<br />
+    📧 Email: Support@icl.today<br />
     📞 Phone: +91 96000 85988 | +1 (314) 732 0300</p>
   `
 },
@@ -282,7 +282,7 @@ const BlogData = [
 
     <h3>Get in Touch with Infoziant</h3>
     <p>🌐 Website: www.infoziant.com<br />
-    📧 Email: support@infoziant.com<br />
+    📧 Email: Support@icl.today<br />
     📞 Phone: +91 96000 85988 | +1 (314) 732 0300</p>
   `
 },
@@ -321,7 +321,7 @@ const BlogData = [
 
     <h3>Get in Touch with Infoziant</h3>
     <p>🌐 Website: www.infoziant.com<br />
-    📧 Email: support@infoziant.com<br />
+    📧 Email: Support@icl.today<br />
     📞 Phone: +91 96000 85988 | +1 (314) 732 0300</p>
   `
 },
@@ -794,7 +794,7 @@ const BlogData = [
 
     <h3>Contact Infoziant Today</h3>
     <p>Let’s secure your infrastructure before the next exploit hits. Have questions or need assistance with your cybersecurity needs? Get in touch with us:</p>
-    <p>📧 Email: support@infoziant.com<br />
+    <p>📧 Email: Support@icl.today<br />
     🌐 Website: www.infoziant.com<br />
     📞 Phone: +91 96000 85988 (India) | 1 (314) 732 0300 (US)</p>
 
@@ -966,7 +966,7 @@ const BlogData = [
     <h3>Contact Us</h3>
     <p>Have questions or need assistance with your cybersecurity needs? Get in touch with us:</p>
     <ul>
-      <li>📧 Email: support@infoziant.com</li>
+      <li>📧 Email: Support@icl.today</li>
       <li>🌐 Website: www.infoziant.com</li>
       <li>📞 Phone: +91 96000 85988, 1 (314) 732 0300</li>
     </ul>
@@ -1026,7 +1026,7 @@ const BlogData = [
     <h3>Contact Us</h3>
     <p>Have questions or need assistance with your cybersecurity needs? Get in touch with us:</p>
     <ul>
-      <li>📧 Email: support@infoziant.com</li>
+      <li>📧 Email: Support@icl.today</li>
       <li>🌐 Website: www.infoziant.com</li>
       <li>📞 Phone: +91 96000 85988, 1 (314) 732 0300</li>
     </ul>
@@ -1086,7 +1086,7 @@ const BlogData = [
     <h3>Contact Us</h3>
     <p>Need help transitioning to Zero Trust or securing your cloud infrastructure?</p>
     <ul>
-      <li>📧 Email: support@infoziant.com</li>
+      <li>📧 Email: Support@icl.today</li>
       <li>🌐 Website: www.infoziant.com</li>
       <li>📞 Phone: +91 96000 85988, 1 (314) 732 0300</li>
     </ul>
@@ -1138,7 +1138,7 @@ const BlogData = [
     <h3>Contact Us</h3>
     <p>Looking to secure your business?</p>
     <ul>
-      <li>📧 Email: support@infoziant.com</li>
+      <li>📧 Email: Support@icl.today</li>
       <li>🌐 Website: www.infoziant.com</li>
       <li>📞 Phone: +91 96000 85988, 1 (314) 732 0300</li>
     </ul>

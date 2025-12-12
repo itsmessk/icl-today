@@ -100,8 +100,8 @@ export default function Footer() {
   <div className="space-y-2 text-gray-300 text-sm">
     <p className="flex items-center justify-center md:justify-start gap-2">
       <FaEnvelope className="text-teal-300 text-md" />
-      <a href="mailto:support@infoziant.com" className="hover:text-teal-200 transition font-medium">
-       support@infoziant.com
+      <a href="mailto:Support@icl.today" className="hover:text-teal-200 transition font-medium">
+       Support@icl.today
       </a>
     </p>
 
