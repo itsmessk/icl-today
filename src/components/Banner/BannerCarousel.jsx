@@ -274,7 +274,7 @@ function BannerCarousel() {
 
                 <button
                   onClick={() => setShowForm(true)}
-                  className="px-6 sm:px-8 py-3 border rounded-full font-semibold bg-white cursor-pointer"
+                  className="px-6 sm:px-8 py-3 border border-gray-300 rounded-full font-semibold bg-white cursor-pointer"
                 >
                   {activeSlide.secondaryBtnText}
                 </button>
