@@ -3,6 +3,7 @@ import emailjs from '@emailjs/browser';
 import { FaCircleCheck } from "react-icons/fa6";
 import { FaTimes } from "react-icons/fa";
 import "../components/css/InquiryForm.css"
+import { FaEnvelope, FaPhone } from "react-icons/fa";
 
 export default function InquiryFormSerivies({ closeModal }) {
   const [formData, setFormData] = useState({
@@ -105,10 +106,21 @@ export default function InquiryFormSerivies({ closeModal }) {
         <p className="form-desc-i">
           Have a question or need assistance? We're here to help — just drop us a message.
         </p>
-        <p className="support-note-i">
-  For technical support, contact:  
-  <a href="mailto:Hariraj_infozinat.com" className="support-email-i">Hariraj_infozinat.com</a>
+       <p className="support-note-i">
+  For technical support, contact:
+  <br />
+
+  <a href="mailto:support@infoziant.com" className="support-email-i flex items-center justify-center gap-2 mt-1">
+    <FaEnvelope className="text-blue-600" />
+    support@infoziant.com
+  </a>
+
+  <a href="tel:+918667214326" className="support-email-i flex items-center justify-center gap-2 mt-1">
+    <FaPhone className="text-blue-600" />
+    +91 86672 14326
+  </a>
 </p>
+
 
 
         {/* Success message display */}
