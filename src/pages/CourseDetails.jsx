@@ -68,12 +68,13 @@ const CourseDetails = ({ user }) => {
 
       <div className="kare-infoziant-banner">
   <div className="banner-logos">
-   <img src={infoziantLogo} alt="Infoziant Logo" className="banner-logo infoziant-size" />
-
+   
+ <img src={kareLogo} alt="KARE Logo" className="banner-logo" />
     {/* Vertical line separator */}
     <div className="banner-separator"></div>
+     <img src={infoziantLogo} alt="Infoziant Logo" className="banner-logo infoziant-size" />
 
-    <img src={kareLogo} alt="KARE Logo" className="banner-logo" />
+   
   </div>
 
   <div className="banner-text">

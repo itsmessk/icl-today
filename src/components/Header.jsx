@@ -8,11 +8,11 @@ const Header = () => {
 
   const menuItems = [
     { name: "Courses", path: "/courses" },
-    { name: "Placement Support", path: "/placement" },
-    { name: "Internship Programs", path: "/internship" },
-    { name: "Centre Of Excellence", path: "/coe" },
-    { name: "CodeChef Training", path: "/codechef" },
-    { name: "Edutech Solutions", path: "/edutech" },
+    { name: "Placement", path: "/placement" },
+    { name: "Internship", path: "/internship" },
+    { name: "COE", path: "/coe" },
+    { name: "CodeChef", path: "/codechef" },
+    { name: "Edutech", path: "/edutech" },
   ];
   
 
