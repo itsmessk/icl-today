@@ -94,25 +94,25 @@ export default function Footer() {
 
 
           {/* Technical Support */}
-          <div className="footer-support text-center md:text-left">
-            <h3 className="text-md font-semibold text-gray-100 mb-3">Technical Support</h3>
+<div className="footer-support text-center md:text-left">
+  <h3 className="text-md font-semibold text-gray-100 mb-3">Technical Support</h3>
 
-            <div className="space-y-2 text-gray-300 text-sm">
-              <p className="flex items-center justify-center md:justify-start gap-2">
-                <FaEnvelope className="text-teal-300 text-lg" />
-                <a href="mailto:Hariraj_infozinat.com" className="hover:text-teal-200 transition font-medium">
-                  Hariraj_infozinat.com
-                </a>
-              </p>
+  <div className="space-y-2 text-gray-300 text-sm">
+    <p className="flex items-center justify-center md:justify-start gap-2">
+      <FaEnvelope className="text-teal-300 text-md" />
+      <a href="mailto:support@infoziant.com" className="hover:text-teal-200 transition font-medium">
+       support@infoziant.com
+      </a>
+    </p>
 
-              <p className="flex items-center justify-center md:justify-start gap-2">
-                <FaMapMarkerAlt className="text-teal-300 text-lg" />
-                <a href="tel:+918667214326" className="hover:text-teal-200 transition font-medium">
-                  +91 86672 14326
-                </a>
-              </p>
-            </div>
-          </div>
+    <p className="flex items-center justify-center md:justify-start gap-2">
+      <FaPhoneAlt className="text-teal-300 text-md" />
+      <a href="tel:+918667214326" className="hover:text-teal-200 transition font-medium">
+        +91 86672 14326
+      </a>
+    </p>
+  </div>
+</div>
 
         </div>
 
