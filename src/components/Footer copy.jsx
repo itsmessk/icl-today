@@ -113,8 +113,8 @@ export default function Footer() {
     </p>
     <p className="flex items-center justify-center md:justify-start gap-2">
       <FaPhoneAlt className="text-teal-300 text-md" />
-      <a href="tel:+917550272103" className="hover:text-teal-200 transition font-medium">
-       +91 75502 72103
+      <a href="tel:+919176771711" className="hover:text-teal-200 transition font-medium">
+       +91 91767 71711
       </a>
     </p>
   </div>

@@ -131,8 +131,8 @@ export default function InquiryFormSerivies({ closeModal }) {
   <span>/</span>
 
   {/* Second number */}
-  <a href="tel:+917550272103" className="font-medium">
-    +91 75502 72103
+  <a href="tel:+919176771711" className="font-medium">
+    +91 91767 71711
   </a>
 </div>
 
