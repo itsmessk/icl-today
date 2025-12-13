@@ -61,7 +61,7 @@ const CourseFAQs = () => {
               <h4 className="mb-1 text-xl font-semibold text-gray-800">
                 {item.title}
               </h4>
-              <p className="text-lg leading-relaxed text-gray-600">
+              <p className="text-md leading-relaxed text-gray-600">
                 {item.desc}
               </p>
             </div>
