@@ -6,6 +6,8 @@ import InquiryModal from '../components/InquiryModal';
 import './CourseDetails.css'; // Make sure to create this CSS file next
 import kareLogo from "../assets/companyAndCollege/Kalasalingam.png";
 import infoziantLogo from "../assets/companyAndCollege/infoziant.png";
+import { FaPhoneAlt } from "react-icons/fa";
+import CourseFAQs from '../components/CourseFAQs';
 
 const CourseDetails = ({ user }) => {
   const { id } = useParams();
@@ -67,21 +69,21 @@ const CourseDetails = ({ user }) => {
     <div className="course-details-page">
 
       <div className="kare-infoziant-banner">
-  <div className="banner-logos">
-   
- <img src={kareLogo} alt="KARE Logo" className="banner-logo" />
-    {/* Vertical line separator */}
-    <div className="banner-separator"></div>
-     <img src={infoziantLogo} alt="Infoziant Logo" className="banner-logo infoziant-size" />
+        <div className="banner-logos">
 
-   
-  </div>
+          <img src={kareLogo} alt="KARE Logo" className="banner-logo" />
+          {/* Vertical line separator */}
+          <div className="banner-separator"></div>
+          <img src={infoziantLogo} alt="Infoziant Logo" className="banner-logo infoziant-size" />
 
-  <div className="banner-text">
-    <h1 className="banner-title">KARE OFFICE OF INDUSTRY RELATIONS & INFOZIANT</h1>
-    <h3 className="banner-subtitle">Emerging Tech Credit Program</h3>
-  </div>
-</div>
+
+        </div>
+
+        <div className="banner-text">
+          <h1 className="banner-title">KARE OFFICE OF INDUSTRY RELATIONS & INFOZIANT</h1>
+          <h3 className="banner-subtitle">Emerging Tech Credit Program</h3>
+        </div>
+      </div>
 
       {/* Hero Section with Course Banner */}
       <div className="course-hero">
@@ -109,10 +111,24 @@ const CourseDetails = ({ user }) => {
                     <span>{course.level}</span>
                   </div>
                   <div className="meta-item">
-                    
-                     <i className="fas fa-award"></i> 3 Credits
+
+                    <i className="fas fa-award"></i> 3 Credits
                   </div>
                 </div>
+                {course.title === "Cybersecurity Essentials" && (
+                  <div className="mb-4 flex items-center gap-2 text-md font-medium text-white">
+                    <FaPhoneAlt className="text-md" />
+                    <span className='font-semibold'>For Tech queries:</span>
+                    <a
+                      href="tel:+919731523979"
+                      className="font-semibold underline hover:opacity-90"
+                    >
+                      +91 97315 23979
+                    </a>
+                  </div>
+                )}
+
+
 
                 <div className="course-instructor-mini">
                   <img src="https://i.graphicmama.com/uploads/2017/12/5a2658fe73cef-clark-executive.png" alt={course.instructor} />
@@ -126,15 +142,15 @@ const CourseDetails = ({ user }) => {
               <div className="course-hero-right">
                 <div className="course-card-sticky">
                   <div className="course-preview-card">
-                     <div className="absolute top-8 right-3 bg-green-500 text-white px-3 py-1 rounded-md text-sm font-semibold shadow-md flex items-center gap-1">
-    <i className="fas fa-award"></i> 3 Credits
-  </div>
+                    <div className="absolute top-8 right-3 bg-green-500 text-white px-3 py-1 rounded-md text-sm font-semibold shadow-md flex items-center gap-1">
+                      <i className="fas fa-award"></i> 3 Credits
+                    </div>
                     <img src={course.image} alt={course.title} className="preview-image" />
                     <div className="preview-content">
                       <div className="price-section">
-                      <span className="price-current">
-    ₹{course.price} <span className="gst-text">(GST inclusive)</span>
-  </span>
+                        <span className="price-current">
+                          ₹{course.price} <span className="gst-text">(GST inclusive)</span>
+                        </span>
 
                         {course.originalPrice && (
                           <span className="price-original">₹{course.originalPrice}</span>
@@ -162,6 +178,7 @@ const CourseDetails = ({ user }) => {
                         * Only for Kalasalingam Academy of Research and Education
                       </p>
 
+
                       <div className="course-includes">
                         <h4>This course includes:</h4>
                         <ul>
@@ -169,7 +186,7 @@ const CourseDetails = ({ user }) => {
                           <li><i className="fas fa-infinity"></i> Full lifetime access</li>
                           <li><i className="fas fa-mobile-alt"></i> Mobile & Desktop access</li>
                           <li><i className="fas fa-certificate"></i> Certificate of completion</li>
-                       
+
                         </ul>
                       </div>
                     </div>
@@ -216,7 +233,7 @@ const CourseDetails = ({ user }) => {
                   >
                     <i className="fas fa-list-ul"></i> Curriculum
                   </button>
-                 
+
                 </div>
 
                 <div className="tabs-content">
@@ -323,10 +340,14 @@ const CourseDetails = ({ user }) => {
                 </div>
               </div>
             </div>
+            <CourseFAQs/>
           </div>
+           
         </div>
-      </div>
+         
 
+      </div>
+    
       {/* Inquiry Modal */}
       {showInquiryModal && course && (
         <InquiryModal
