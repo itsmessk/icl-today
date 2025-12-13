@@ -102,7 +102,7 @@ const PaymentSuccess = () => {
                 </button>
               </div>
               <div className="support-info">
-                <p>Need help? Contact us at <a href="mailto:support@infoziant.com">support@infoziant.com</a></p>
+                <p>Need help? Contact us at <a href="mailto:support@icl.today">Support@icl.today</a></p>
               </div>
             </div>
           ) : (
