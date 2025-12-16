@@ -21,7 +21,7 @@ const AdminDashboard = ({ user }) => {
     try {
       setIsLoading(true);
       const token = localStorage.getItem('token');
-      const response = await fetch('https://icl.today/api/course-inquiries/dashboard/stats', {
+      const response = await fetch('https://api.icl.today/api/course-inquiries/dashboard/stats', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
