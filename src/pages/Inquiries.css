@@ -2,10 +2,49 @@
   padding: 2rem 0;
 }
 
-.page-title {
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   margin-bottom: 2rem;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.page-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.page-title {
+  margin: 0;
   font-size: 2rem;
   color: #333;
+}
+
+.back-to-dashboard {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+
+.back-to-dashboard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.back-to-dashboard i {
+  font-size: 0.875rem;
 }
 
 /* Table Styles */
@@ -66,14 +105,93 @@
   color: #ffc107;
 }
 
-.status-badge.failed, .status-badge.cancelled {
+.status-badge.failed, .status-badge.cancelled, .status-badge.canceled {
   background-color: rgba(220, 53, 69, 0.1);
   color: #dc3545;
 }
 
-.status-badge.processing {
+.status-badge.processing, .status-badge.contacted {
   background-color: rgba(13, 110, 253, 0.1);
   color: #0d6efd;
+}
+
+.status-badge.enrolled {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+/* Inline Edit Styles */
+.status-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.status-cell:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.status-cell .edit-icon {
+  opacity: 0;
+  font-size: 0.75rem;
+  color: #6c757d;
+  transition: opacity 0.2s ease;
+}
+
+.status-cell:hover .edit-icon {
+  opacity: 1;
+}
+
+.inline-edit {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.edit-dropdown {
+  padding: 6px 10px;
+  border: 2px solid #667eea;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  background-color: white;
+  color: #333;
+  cursor: pointer;
+  outline: none;
+  text-transform: capitalize;
+  transition: all 0.2s ease;
+  min-width: 120px;
+}
+
+.edit-dropdown:focus {
+  border-color: #764ba2;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.btn-cancel-edit {
+  padding: 6px 8px;
+  border: none;
+  border-radius: 4px;
+  background-color: #dc3545;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.btn-cancel-edit:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
+}
+
+.btn-cancel-edit i {
+  font-size: 0.875rem;
 }
 
 .payment-id {
@@ -352,5 +470,108 @@
   .date-range-inputs {
     flex-direction: column;
     align-items: stretch;
+  }
+}
+
+/* Action Buttons Styles */
+.action-buttons {
+  padding: 0.5rem !important;
+  min-width: 150px;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: stretch;
+}
+
+.btn-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-action i {
+  font-size: 0.875rem;
+}
+
+.btn-action:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-action:active {
+  transform: translateY(0);
+}
+
+.btn-verify {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+}
+
+.btn-verify:hover {
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+}
+
+.btn-status {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+}
+
+.btn-status:hover {
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.4);
+}
+
+.btn-payment {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: white;
+}
+
+.btn-payment:hover {
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);
+}
+
+/* Responsive adjustments for action buttons */
+@media (max-width: 1400px) {
+  .button-group {
+    flex-direction: column;
+  }
+  
+  .btn-action {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .inquiry-table {
+    font-size: 0.85rem;
+  }
+  
+  .inquiry-table th,
+  .inquiry-table td {
+    padding: 0.5rem;
+  }
+  
+  .action-buttons {
+    min-width: 150px;
+  }
+  
+  .btn-action {
+    font-size: 0.75rem;
+    padding: 5px 8px;
+  }
+  
+  .btn-action i {
+    font-size: 0.75rem;
   }
 }

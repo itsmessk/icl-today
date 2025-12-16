@@ -211,4 +211,45 @@ export const getInquiry = async () => {
   }
 };
 
+// Update inquiry status
+export const updateInquiryStatus = async (inquiryId, status) => {
+  try {
+    const response = await api.patch(`/course-inquiries/${inquiryId}/status`, { status });
+    return response.data;
+  } catch (error) {
+    console.error('Error updating inquiry status:', error);
+    throw error;
+  }
+};
+
+// Update payment status
+export const updatePaymentStatus = async (inquiryId, paymentStatus, razorpayPaymentId = null) => {
+  try {
+    const body = { paymentStatus };
+    if (razorpayPaymentId) {
+      body.razorpayPaymentId = razorpayPaymentId;
+    }
+    const response = await api.patch(`/course-inquiries/${inquiryId}/payment-status`, body);
+    return response.data;
+  } catch (error) {
+    console.error('Error updating payment status:', error);
+    throw error;
+  }
+};
+
+// Manually verify payment and enroll student
+export const manuallyVerifyPayment = async (inquiryId, paymentId = null, notes = null) => {
+  try {
+    const body = {};
+    if (paymentId) body.paymentId = paymentId;
+    if (notes) body.notes = notes;
+    
+    const response = await api.patch(`/course-inquiries/${inquiryId}/manual-verify`, body);
+    return response.data;
+  } catch (error) {
+    console.error('Error manually verifying payment:', error);
+    throw error;
+  }
+};
+
 export default api;

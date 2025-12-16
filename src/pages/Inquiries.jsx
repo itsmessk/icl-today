@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getInquiry } from '../utils/api';
+import { getInquiry, updateInquiryStatus, updatePaymentStatus, manuallyVerifyPayment } from '../utils/api';
 import { Link, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import Papa from 'papaparse';
@@ -22,6 +22,8 @@ const Inquiries = ({ user }) => {
     }
   });
   const [filteredInquiries, setFilteredInquiries] = useState([]);
+  const [editingInquiry, setEditingInquiry] = useState(null);
+  const [editingField, setEditingField] = useState(null);
 
   useEffect(() => {
     if (!Array.isArray(inquiries)) return;
@@ -219,12 +221,100 @@ const Inquiries = ({ user }) => {
     }
   };
 
+  // Handler for manual payment verification and enrollment
+  const handleManualVerify = async (inquiry) => {
+    const confirmed = window.confirm(
+      `Manually verify payment and enroll ${inquiry.name}?\n\n` +
+      `This will:\n` +
+      `• Mark payment as completed\n` +
+      `• Enroll the student\n` +
+      `• Send enrollment confirmation email`
+    );
+    
+    if (!confirmed) return;
+
+    const paymentId = window.prompt(
+      'Enter Razorpay Payment ID (optional):\nLeave blank if not available',
+      inquiry.razorpayPaymentId || ''
+    );
+
+    try {
+      const result = await manuallyVerifyPayment(
+        inquiry._id,
+        paymentId || null,
+        'Manually verified by admin'
+      );
+
+      if (result.success) {
+        toast.success('✅ Payment verified! Enrollment email sent to student.');
+        // Refresh inquiries list
+        const updatedInquiries = await getInquiry();
+        setInquiries(updatedInquiries);
+      } else {
+        toast.error('Failed to verify payment');
+      }
+    } catch (error) {
+      console.error('Error verifying payment:', error);
+      toast.error(error.response?.data?.message || 'Error verifying payment. Please try again.');
+    }
+  };
+
+  // Handler for updating payment status only
+  const handleUpdatePaymentStatus = async (inquiryId, newStatus) => {
+    try {
+      await updatePaymentStatus(inquiryId, newStatus);
+      toast.success('Payment status updated successfully');
+      
+      // Refresh inquiries list
+      const updatedInquiries = await getInquiry();
+      setInquiries(updatedInquiries);
+      setEditingInquiry(null);
+      setEditingField(null);
+    } catch (error) {
+      console.error('Error updating payment status:', error);
+      toast.error(error.response?.data?.message || 'Error updating payment status');
+    }
+  };
+
+  // Handler for updating inquiry status
+  const handleUpdateStatus = async (inquiryId, newStatus) => {
+    try {
+      await updateInquiryStatus(inquiryId, newStatus);
+      toast.success('Inquiry status updated successfully');
+      
+      // Refresh inquiries list
+      const updatedInquiries = await getInquiry();
+      setInquiries(updatedInquiries);
+      setEditingInquiry(null);
+      setEditingField(null);
+    } catch (error) {
+      console.error('Error updating status:', error);
+      toast.error(error.response?.data?.message || 'Error updating status');
+    }
+  };
+
+  const startEditing = (inquiryId, field) => {
+    setEditingInquiry(inquiryId);
+    setEditingField(field);
+  };
+
+  const cancelEditing = () => {
+    setEditingInquiry(null);
+    setEditingField(null);
+  };
+
+
   return (
     <div className="inquiries-page">
       <div className="container">
 
         <div className="page-header">
-          <h1 className="page-title">Inquiries</h1>
+          <div className="page-header-left">
+            <h1 className="page-title">Inquiries</h1>
+            <Link to="/dashboard" className="back-to-dashboard">
+              <i className="fas fa-arrow-left"></i> Back to Dashboard
+            </Link>
+          </div>
           {Array.isArray(inquiries) && inquiries.length > 0 && (
             <div className="export-buttons">
               <button onClick={exportToCSV} className="export-button csv">
@@ -324,6 +414,7 @@ const Inquiries = ({ user }) => {
                     <th>Status</th>
                     <th>Payment Status</th>
                     <th>Payment ID</th>
+                    <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -341,19 +432,77 @@ const Inquiries = ({ user }) => {
                       <td>{inquiry.year}</td>
                       {/* Status and Payment Status with conditional classes */}
                       <td>
-                        <span className={`status-badge ${inquiry.status}`}>
-                          {inquiry.status}
-                        </span>
+                        {editingInquiry === inquiry._id && editingField === 'status' ? (
+                          <div className="inline-edit">
+                            <select
+                              className="edit-dropdown"
+                              value={inquiry.status}
+                              onChange={(e) => handleUpdateStatus(inquiry._id, e.target.value)}
+                              autoFocus
+                            >
+                              <option value="pending">Pending</option>
+                              <option value="contacted">Contacted</option>
+                              <option value="enrolled">Enrolled</option>
+                              <option value="canceled">Canceled</option>
+                            </select>
+                            <button onClick={cancelEditing} className="btn-cancel-edit">
+                              <i className="fas fa-times"></i>
+                            </button>
+                          </div>
+                        ) : (
+                          <div className="status-cell" onClick={() => startEditing(inquiry._id, 'status')}>
+                            <span className={`status-badge ${inquiry.status}`}>
+                              {inquiry.status}
+                            </span>
+                            <i className="fas fa-edit edit-icon"></i>
+                          </div>
+                        )}
                       </td>
                       <td>
-                        <span className={`status-badge ${inquiry.paymentStatus}`}>
-                          {inquiry.paymentStatus}
-                        </span>
+                        {editingInquiry === inquiry._id && editingField === 'payment' ? (
+                          <div className="inline-edit">
+                            <select
+                              className="edit-dropdown"
+                              value={inquiry.paymentStatus}
+                              onChange={(e) => handleUpdatePaymentStatus(inquiry._id, e.target.value)}
+                              autoFocus
+                            >
+                              <option value="pending">Pending</option>
+                              <option value="completed">Completed</option>
+                              <option value="failed">Failed</option>
+                            </select>
+                            <button onClick={cancelEditing} className="btn-cancel-edit">
+                              <i className="fas fa-times"></i>
+                            </button>
+                          </div>
+                        ) : (
+                          <div className="status-cell" onClick={() => startEditing(inquiry._id, 'payment')}>
+                            <span className={`status-badge ${inquiry.paymentStatus}`}>
+                              {inquiry.paymentStatus}
+                            </span>
+                            <i className="fas fa-edit edit-icon"></i>
+                          </div>
+                        )}
                       </td>
                       <td className="payment-id">
                         {inquiry.razorpayPaymentId ? 
                           inquiry.razorpayPaymentId.slice(0, 10) + '...' : 
                           'N/A'}
+                      </td>
+                      <td className="action-buttons">
+                        <div className="button-group">
+                          {/* Show Manual Verify button if payment is not completed */}
+                          {inquiry.paymentStatus !== 'completed' && (
+                            <button
+                              onClick={() => handleManualVerify(inquiry)}
+                              className="btn-action btn-verify"
+                              title="Manually verify payment and enroll student"
+                            >
+                              <i className="fas fa-check-circle"></i>
+                              Verify & Enroll
+                            </button>
+                          )}
+                        </div>
                       </td>
                     </tr>
                   ))}

@@ -26,7 +26,7 @@ const Login = ({ handleLogin, user }) => {
   useEffect(() => {
     // Redirect if user is already logged in
     if (user) {
-      navigate('/courses');
+      navigate('/dashboard');
     }
   }, [user, navigate]);
   
@@ -67,7 +67,7 @@ const Login = ({ handleLogin, user }) => {
         if (userData && userData.token) {
           handleLogin(userData);
           toast.success('Login successful!');
-          navigate('/courses');
+          navigate('/dashboard');
         } else {
           toast.error('Login failed: Invalid response from server');
         }

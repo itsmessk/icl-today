@@ -10,6 +10,7 @@ import CourseDetails from './pages/CourseDetails';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
+import AdminDashboard from './pages/AdminDashboard';
 import Profile from './pages/Profile';
 import EnrolledCourses from './pages/EnrolledCourses';
 import PaymentHistory from './pages/PaymentHistory';
@@ -105,7 +106,7 @@ function App() {
             <Route path="/resend-verification" element={<ComingSoon />} />
             
             {/* Protected Routes - Coming Soon */}
-            <Route path="/dashboard" element={<ComingSoon />} />
+            <Route path="/dashboard" element={user ? <AdminDashboard user={user} /> : <Login handleLogin={handleLogin} user={user} />} />
             <Route path="/profile" element={<ComingSoon />} />
             <Route path="/enrolled-courses" element={<ComingSoon />} />
             <Route path="/payment-history" element={<ComingSoon />} />
