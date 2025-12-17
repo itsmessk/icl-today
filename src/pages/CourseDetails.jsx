@@ -8,6 +8,9 @@ import kareLogo from "../assets/companyAndCollege/Kalasalingam.png";
 import infoziantLogo from "../assets/companyAndCollege/infoziant.png";
 import { FaPhoneAlt } from "react-icons/fa";
 import CourseFAQs from '../components/CourseFAQs';
+import codeImg from "../assets/wincup2.png";
+import { Trophy, Code2, Gift, IndianRupee, Sparkles } from "lucide-react";
+
 
 const CourseDetails = ({ user }) => {
   const { id } = useParams();
@@ -202,6 +205,7 @@ const CourseDetails = ({ user }) => {
         <div className="course-content-wrapper">
           {/* Main Content */}
           <div className="course-main-content">
+
             {/* What You'll Learn Section */}
             <div className="content-section learning-outcomes">
               <h2 className="section-title">
@@ -216,6 +220,7 @@ const CourseDetails = ({ user }) => {
                 ))}
               </div>
             </div>
+
 
             {/* Tabs Section */}
             <div className="content-section">
@@ -340,14 +345,99 @@ const CourseDetails = ({ user }) => {
                 </div>
               </div>
             </div>
-            <CourseFAQs/>
-          </div>
-           
+
+            {/* Hackathons, Rewards & Cash Prizes */}
+<div className="mt-10 mx-4 sm:mx-6 mb-8 rounded-3xl bg-white px-6 sm:px-10 py-8 sm:py-12 shadow-sm border border-slate-200">
+
+
+  {/* Header */}
+  <div className="max-w-3xl mx-auto text-center">
+    <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-indigo-100 px-4 py-1 text-xs sm:text-sm font-semibold text-indigo-700">
+      <Sparkles className="h-4 w-4" />
+      Performance Benefits
+    </div>
+
+    <h2 className="mt-2 text-2xl sm:text-3xl font-extrabold text-gray-900">
+      Hackathons, Rewards & Cash Prizes
+    </h2>
+
+    <p className="mt-2 text-base sm:text-lg text-gray-600">
+      Compete in real challenges and get rewarded for performance.
+    </p>
+  </div>
+
+  {/* Content */}
+  <div className="mt-8 sm:mt-12 grid gap-10 lg:grid-cols-2 items-center">
+
+    {/* Left – Features */}
+    <div className="space-y-6">
+
+      <div className="flex items-start gap-4">
+        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-600 text-white">
+          <Code2 className="h-5 w-5" />
         </div>
-         
+        <div>
+          <h3 className="text-base sm:text-lg font-semibold text-gray-900">
+            Industry Hackathons
+          </h3>
+          <p className="text-sm text-gray-600">
+            Solve real-world problems with mentor guidance.
+          </p>
+        </div>
+      </div>
+
+      <div className="flex items-start gap-4">
+        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-500 text-white">
+          <Gift className="h-5 w-5" />
+        </div>
+        <div>
+          <h3 className="text-base sm:text-lg font-semibold text-gray-900">
+            Rewards & Recognition
+          </h3>
+          <p className="text-sm text-gray-600">
+            Certificates, goodies, and official recognition.
+          </p>
+        </div>
+      </div>
+
+      <div className="flex items-start gap-4">
+        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-600 text-white">
+          <IndianRupee className="h-5 w-5" />
+        </div>
+        <div>
+          <h3 className="text-base sm:text-lg font-semibold text-gray-900">
+            Cash Prizes
+          </h3>
+          <p className="text-sm text-gray-600">
+            Top performers earn cash prizes and leaderboard ranks.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    {/* Right – GIF / Visual */}
+    <div className="flex justify-center lg:justify-end">
+      <div className="relative max-w-sm">
+         <img
+      src={codeImg}
+      alt="Coding Hackathon"
+     
+    />
+      </div>
+    </div>
+
+  </div>
+</div>
+
+            <CourseFAQs />
+          </div>
+
+        </div>
+
 
       </div>
-    
+
       {/* Inquiry Modal */}
       {showInquiryModal && course && (
         <InquiryModal

@@ -1,5 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import './CourseCard.css';
+import { Trophy } from "lucide-react";
+
 
 const CourseCard = ({ course }) => {
   const navigate = useNavigate();
@@ -14,9 +16,12 @@ const CourseCard = ({ course }) => {
 
   return (
     <div className="course-card card">
+      
       <img src={course.image} alt={course.title} className="course-image" />
+      
       <div className="course-content">
         <h3 className="course-title">{course.title}</h3>
+        
         <p className="course-instructor">
           <i className="fas fa-user"></i> {course.instructor}
         </p>
@@ -48,6 +53,11 @@ const CourseCard = ({ course }) => {
           <span className="course-level">
             <i className="fas fa-signal"></i> {course.level}
           </span>
+
+            <span className="flex items-center gap-1.5 rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700 border border-indigo-100">
+    <Trophy className="h-3.5 w-3.5 text-indigo-600" />
+    Hackathon
+  </span>
           
         </div>
         <button
